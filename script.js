@@ -16,3 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+window.addEventListener('load', function () {
+    const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!hasFinePointer || prefersReducedMotion || !window.cursoreffects) {
+        return;
+    }
+
+    new window.cursoreffects.followingDotCursor({
+        color: ['#111111a6']
+    });
+});
