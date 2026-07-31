@@ -301,6 +301,23 @@
         flex-shrink: 0;
     }
 
+    .project-icon--logo {
+        object-fit: contain;
+        padding: 5px;
+        background: #ffffff;
+        border: 1px solid var(--border);
+    }
+
+    .project-icon--text {
+        display: grid;
+        place-items: center;
+        background: var(--fg);
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
     .project-title h3 {
         margin: 0;
     }
