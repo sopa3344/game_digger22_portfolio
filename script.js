@@ -6,61 +6,77 @@ document.addEventListener('DOMContentLoaded', function () {
     const detailTitle = document.querySelector('.map-detail-title');
     const detailDescription = document.querySelector('.map-detail-description');
     const detailLink = document.querySelector('.map-detail-link');
+    const previewImage = document.querySelector('.map-preview-image');
+    const previewNumber = document.querySelector('.map-preview-number');
+    const previewTitle = document.querySelector('.map-preview-title');
+    const previewSummary = document.querySelector('.map-preview-summary');
 
     const projectData = {
         anti: {
             number: '01',
             title: 'Anti-V: Reboot',
             description: '게임 PM · 사업 총괄 · 데프캣 스튜디오',
-            linkText: '게임동아 보도 ↗',
-            href: 'https://game.donga.com/120615/'
+            previewNumber: '01 / GAME',
+            summary: '좋아하는 마음을 게임으로 완성했습니다.',
+            image: 'images/gallery/antiv_1.png',
+            target: '#anti-v'
         },
         aicon: {
             number: '02',
             title: 'GAME AiCON Seoul',
             description: '글로벌 게임 B2B 행사 · Organizer',
-            linkText: 'PocketGamer.biz 보도 ↗',
-            href: 'https://www.pocketgamer.biz/game-aicon-seoul-brings-together-developers-publishers-investors-and-more-next-week/'
+            previewNumber: '02 / EXHIBITION',
+            summary: '아시아의 게임 산업을 서울에서 연결했습니다.',
+            image: 'images/gallery/aicone_1.jpeg',
+            target: '#game-aicon'
         },
         logitech: {
             number: '03',
             title: 'Logitech × UNITE Seoul',
             description: 'MX Master 4 체험 게임 · 30초 · 800회 이상 플레이',
-            linkText: '체험 게임 보기 ↗',
-            href: 'https://mx-master-4-master-reveal-seoul.game-digger22.chatgpt.site/'
+            previewNumber: '03 / BRAND EXPERIENCE',
+            summary: '제품의 기능을 30초의 플레이로 번역했습니다.',
+            image: 'images/gallery/logitech_mx_master4_gameplay.png',
+            target: '#logitech'
         },
         town: {
             number: '04',
             title: 'Seoul Game Town 1·2',
             description: '인디게임 전시 공동 기획·운영 · 누적 펀딩 1,810만 원+',
-            linkText: '머니투데이 보도 ↗',
-            href: 'https://www.mt.co.kr/industry/2026/07/08/2026070715375551305'
+            previewNumber: '04 / EXHIBITION',
+            summary: '모든 게임이 존중받는 전시장을 만들었습니다.',
+            image: 'images/gallery/seoulgametown_group.png',
+            target: '#exhibition'
         },
         huddlers: {
             number: '05',
             title: 'Game Huddlers',
             description: '게임 개발자 300명 · 유타대학교 협업 · 연 3회 행사',
-            linkText: 'Discord 참여하기 ↗',
-            href: 'https://discord.gg/jK9aqhKdnC'
+            previewNumber: '05 / COMMUNITY',
+            summary: '개발자 300명이 서로의 다음 프로젝트를 돕습니다.',
+            image: 'images/gallery/me.jpeg',
+            target: '#game-huddlers'
         },
         mmca: {
             number: '06',
             title: 'MMCA Advisory Panel',
             description: '국립현대미술관 제13기 고객자문단 · 관람 경험 개선',
-            linkText: '국립현대미술관 ↗',
-            href: 'https://www.mmca.go.kr/'
+            previewNumber: '06 / CULTURE',
+            summary: '관람객의 눈으로 미술관의 경험을 다시 보았습니다.',
+            image: 'images/gallery/mmca_advisory_session.jpg',
+            target: '#mmca'
         }
     };
 
-    function selectProject(key) {
+    function showProject(key) {
         const project = projectData[key];
         if (!project || !map) return;
 
         map.dataset.active = key;
+        map.classList.add('has-preview');
         mapButtons.forEach(function (button) {
             const isSelected = button.dataset.mapProject === key;
             button.classList.toggle('is-active', isSelected);
-            button.setAttribute('aria-pressed', String(isSelected));
         });
         mapLines.forEach(function (line) {
             line.classList.toggle('is-active', line.dataset.mapLine === key);
@@ -69,17 +85,49 @@ document.addEventListener('DOMContentLoaded', function () {
         detailNumber.textContent = project.number;
         detailTitle.textContent = project.title;
         detailDescription.textContent = project.description;
-        detailLink.textContent = project.linkText;
-        detailLink.href = project.href;
+        detailLink.textContent = '상세 활동으로 이동 ↓';
+        detailLink.href = project.target;
+        detailLink.hidden = false;
+
+        previewImage.src = project.image;
+        previewNumber.textContent = project.previewNumber;
+        previewTitle.textContent = project.title;
+        previewSummary.textContent = project.summary;
+    }
+
+    function clearProject() {
+        if (!map) return;
+        map.classList.remove('has-preview');
+        map.removeAttribute('data-active');
+        mapButtons.forEach(function (button) {
+            button.classList.remove('is-active');
+        });
+        mapLines.forEach(function (line) {
+            line.classList.remove('is-active');
+        });
+        detailNumber.textContent = '—';
+        detailTitle.textContent = '활동명에 마우스를 올려보세요.';
+        detailDescription.textContent = '클릭하면 해당 프로젝트의 상세 기록으로 이동합니다.';
+        detailLink.hidden = true;
     }
 
     mapButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            selectProject(button.dataset.mapProject);
+        button.addEventListener('mouseenter', function () {
+            showProject(button.dataset.mapProject);
+        });
+        button.addEventListener('focus', function () {
+            showProject(button.dataset.mapProject);
         });
     });
 
-    selectProject('anti');
+    if (map) {
+        map.addEventListener('mouseleave', clearProject);
+        map.addEventListener('focusout', function () {
+            window.setTimeout(function () {
+                if (!map.contains(document.activeElement)) clearProject();
+            }, 0);
+        });
+    }
 });
 
 window.addEventListener('load', function () {
