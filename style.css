@@ -197,6 +197,20 @@ figcaption { margin-top: 9px; color: var(--secondary); font-size: 11px; line-hei
 .case-intro h3, .split-case h3 { margin: 0; font-size: clamp(31px, 4vw, 52px); line-height: 1.05; letter-spacing: -.055em; }
 .case-description { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }.case-description > p, .split-case-copy > p { margin: 0; font-size: 16px; line-height: 1.6; }
 .hero-image img { width: 100%; max-height: 740px; aspect-ratio: 16/9; display: block; object-fit: cover; border-radius: var(--r-md); }
+.exhibition-record { margin-top: 14px; padding: clamp(24px, 3.2vw, 40px); border-radius: var(--r-md); background: var(--bg); }
+.exhibition-record-heading { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 5vw, 64px); align-items: end; }
+.exhibition-record-heading h4 { margin: 0; font-size: clamp(27px, 3.2vw, 42px); line-height: 1.04; letter-spacing: -.05em; }
+.exhibition-record-heading > p { max-width: 510px; margin: 0; color: var(--secondary); font-size: 14px; line-height: 1.6; }
+.exhibition-logo-grid { margin: 34px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; list-style: none; }
+.exhibition-logo-grid li { min-width: 0; min-height: 164px; padding: 17px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.exhibition-logo { height: 72px; padding: 12px; display: grid; place-items: center; overflow: hidden; border-radius: 12px; background: #fff; }
+.exhibition-logo img { display: block; width: auto; max-width: 100%; height: auto; max-height: 46px; object-fit: contain; }
+.exhibition-logo-gstar { background: #111; }.exhibition-logo-gstar img { max-height: 54px; }
+.exhibition-logo-dccf { background: #181818; }.exhibition-logo-dccf img { max-height: 34px; }
+.exhibition-logo-tgs img { max-height: 40px; }
+.exhibition-logo-grid strong, .exhibition-logo-grid span { display: block; overflow-wrap: anywhere; }
+.exhibition-logo-grid strong { margin-top: 18px; font-size: 14px; line-height: 1.2; }
+.exhibition-logo-grid span { margin-top: 5px; color: var(--secondary); font-size: 10px; letter-spacing: .02em; }
 .image-pair, .logitech-images { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: stretch; }.image-pair img, .logitech-images img { width: 100%; aspect-ratio: 4/3; display: block; object-fit: cover; border-radius: 20px; }
 .case-quote { min-height: 100%; padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; border-radius: 20px; background: var(--ink); color: #fff; }.case-quote p { margin: 0 0 auto; font-size: clamp(28px, 3.5vw, 46px); font-weight: 650; line-height: 1.05; letter-spacing: -.05em; }.case-quote a, .case-links a, .text-link { width: fit-content; margin-top: 13px; color: var(--accent); font-size: 14px; }
 .metrics { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 12px; }.metrics > div { min-height: 166px; padding: 20px; border-radius: 20px; background: var(--bg); }.metrics span { color: var(--secondary); font-size: 10px; }.metrics strong { display: block; margin-top: 30px; font-size: clamp(40px, 5.5vw, 72px); line-height: .9; letter-spacing: -.07em; }.metrics p { margin: 7px 0 0; font-size: 12px; }
@@ -247,6 +261,11 @@ footer { width: 100%; padding: 21px max(var(--pad), calc((100vw - var(--content)
   .timeline-preview-copy > strong { font-size: 31px; }
   .timeline-caption { grid-template-columns: 1fr 1fr; }
   .timeline-caption p { display: none; }
+  .exhibition-record { padding: 22px; }
+  .exhibition-record-heading { grid-template-columns: 1fr; gap: 24px; }
+  .exhibition-logo-grid { margin-top: 26px; grid-template-columns: 1fr 1fr; }
+  .exhibition-logo-grid li { min-height: 150px; padding: 14px; }
+  .exhibition-logo { height: 66px; }
   .chapter-heading { margin-bottom: 48px; }.chapter-heading h2 { margin-top: 32px; }.case-study, .split-case { padding: 22px; }.case-intro { gap: 40px; }.image-pair, .logitech-images { grid-template-columns: 1fr; }.logitech-images figure:last-child img { aspect-ratio: 4/3; object-position: top; }.metrics { grid-template-columns: 1fr 1fr; }.metrics > div:last-child { grid-column: 1/-1; }.case-quote { min-height: 340px; }.network-field { min-height: 380px; margin-top: 12px; }
   .archive-list a { grid-template-columns: 30px 1fr auto; }.archive-list em { grid-column: 2; }.awards ol { grid-template-columns: 1fr; }.press-list a { grid-template-columns: 26px 1fr 16px; }.press-list p, .press-list time { grid-column: 2 / -1; }
   .contact { padding: 92px 18px 38px; }.contact h2 { margin-top: 72px; }.contact-links { margin-top: 90px; flex-direction: column; }
