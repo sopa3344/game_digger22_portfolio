@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
             line.classList.remove('is-active');
         });
         detailNumber.textContent = '—';
-        detailTitle.textContent = '활동명에 마우스를 올려보세요.';
+        detailTitle.textContent = '활동을 선택해 보세요.';
         detailDescription.textContent = '클릭하면 해당 프로젝트의 상세 기록으로 이동합니다.';
         detailLink.hidden = true;
     }
@@ -134,6 +134,102 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!map.contains(document.activeElement)) clearProject();
             }, 0);
         });
+    }
+
+    const carousel = document.querySelector('[data-logo-carousel]');
+    if (carousel) {
+        const viewport = carousel.querySelector('[data-carousel-window]');
+        const cards = Array.from(carousel.querySelectorAll('.logo-card'));
+        const previousButton = carousel.querySelector('[data-carousel-prev]');
+        const nextButton = carousel.querySelector('[data-carousel-next]');
+        const currentLabel = carousel.querySelector('[data-carousel-current]');
+        const progress = carousel.querySelector('[data-carousel-progress]');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let activeIndex = 0;
+        let autoplayTimer = null;
+        let isVisible = true;
+
+        function nearestCardIndex() {
+            const left = viewport.scrollLeft;
+            const start = cards[0].offsetLeft;
+            let closest = 0;
+            let distance = Infinity;
+            cards.forEach(function (card, index) {
+                const nextDistance = Math.abs((card.offsetLeft - start) - left);
+                if (nextDistance < distance) {
+                    closest = index;
+                    distance = nextDistance;
+                }
+            });
+            return closest;
+        }
+
+        function updateCarouselStatus(index) {
+            activeIndex = Math.max(0, Math.min(index, cards.length - 1));
+            currentLabel.textContent = String(activeIndex + 1).padStart(2, '0');
+            progress.style.width = (((activeIndex + 1) / cards.length) * 100) + '%';
+        }
+
+        function goToCard(index, behavior) {
+            const nextIndex = (index + cards.length) % cards.length;
+            viewport.scrollTo({
+                left: cards[nextIndex].offsetLeft - cards[0].offsetLeft,
+                behavior: behavior || (reducedMotion.matches ? 'auto' : 'smooth')
+            });
+            updateCarouselStatus(nextIndex);
+        }
+
+        function stopAutoplay() {
+            window.clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            if (reducedMotion.matches || !isVisible) return;
+            autoplayTimer = window.setInterval(function () {
+                goToCard(activeIndex + 1);
+            }, 4600);
+        }
+
+        previousButton.addEventListener('click', function () {
+            goToCard(activeIndex - 1);
+            startAutoplay();
+        });
+        nextButton.addEventListener('click', function () {
+            goToCard(activeIndex + 1);
+            startAutoplay();
+        });
+        viewport.addEventListener('scroll', function () {
+            window.requestAnimationFrame(function () {
+                updateCarouselStatus(nearestCardIndex());
+            });
+        }, { passive: true });
+        viewport.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+                event.preventDefault();
+                goToCard(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
+            }
+        });
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+        carousel.addEventListener('focusin', stopAutoplay);
+        carousel.addEventListener('focusout', startAutoplay);
+        viewport.addEventListener('pointerdown', stopAutoplay);
+        viewport.addEventListener('pointerup', startAutoplay);
+        reducedMotion.addEventListener('change', startAutoplay);
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                isVisible = entries[0].isIntersecting;
+                if (isVisible) startAutoplay();
+                else stopAutoplay();
+            }, { threshold: .25 });
+            observer.observe(carousel);
+        } else {
+            startAutoplay();
+        }
+        updateCarouselStatus(0);
     }
 });
 
