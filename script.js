@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const root = document.documentElement;
+    const cover = document.querySelector('.cover');
+    const header = document.querySelector('[data-site-header]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let scrollFrame = null;
+
+    function updateHero() {
+        scrollFrame = null;
+        if (!cover || reducedMotion.matches) return;
+
+        const travel = Math.max(1, cover.offsetHeight - window.innerHeight);
+        const progress = Math.min(1, Math.max(0, window.scrollY / travel));
+        root.style.setProperty('--hero-progress', progress.toFixed(3));
+        if (header) header.classList.toggle('is-condensed', progress > 0.88);
+    }
+
+    function requestHeroUpdate() {
+        if (scrollFrame === null) scrollFrame = window.requestAnimationFrame(updateHero);
+    }
+
+    updateHero();
+    window.addEventListener('scroll', requestHeroUpdate, { passive: true });
+    window.addEventListener('resize', requestHeroUpdate);
+    reducedMotion.addEventListener('change', requestHeroUpdate);
+
     const map = document.querySelector('.activity-map');
     const mapButtons = document.querySelectorAll('[data-map-project]');
     const mapLines = document.querySelectorAll('[data-map-line]');
