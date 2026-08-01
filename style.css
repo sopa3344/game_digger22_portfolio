@@ -101,7 +101,7 @@ main > section,
 
 .cover {
   width: min(100%, calc(var(--content) + var(--pad) * 2));
-  min-height: 100svh;
+  min-height: clamp(560px, 72svh, 760px);
   height: auto;
   margin-inline: auto;
   padding: calc(var(--header-h) + 30px) var(--pad) 28px;
@@ -135,70 +135,6 @@ main > section,
 .overview-summary > p:first-child { margin-bottom: 6px; }
 .overview-summary dl { margin-top: 22px; }
 .overview-summary dl > div { grid-template-columns: 86px 1fr; }
-.overview-work {
-  margin-top: auto;
-  padding-top: clamp(48px, 7vh, 78px);
-}
-.overview-heading {
-  padding-bottom: 8px;
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid var(--line);
-  padding-top: 7px;
-  font-size: 10px;
-  letter-spacing: .04em;
-}
-.overview-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.overview-list { border-top: 1px solid var(--line); }
-.overview-list a {
-  min-height: 53px;
-  padding: 9px 0;
-  display: grid;
-  grid-template-columns: 38px 1.5fr 1fr 18px;
-  gap: 10px;
-  align-items: center;
-  border-bottom: 1px solid var(--soft-line);
-  transition: padding .2s var(--ease), background .2s ease, color .2s ease;
-}
-.overview-list a span { color: var(--faint); font-size: 11px; }
-.overview-list a strong { font-size: 15px; }
-.overview-list a em { color: var(--muted); font-size: 11px; font-style: normal; }
-.overview-list a b { font-size: 13px; font-weight: 450; text-align: right; }
-.overview-list a:hover,
-.overview-list a:focus-visible,
-.overview-list a.is-active { padding-inline: 10px; background: var(--ink); color: var(--paper); }
-.overview-list a:hover span,
-.overview-list a:hover em,
-.overview-list a:focus-visible span,
-.overview-list a:focus-visible em,
-.overview-list a.is-active span,
-.overview-list a.is-active em { color: var(--paper); }
-.overview-preview {
-  position: relative;
-  min-height: 318px;
-  overflow: hidden;
-  background: #deded9;
-}
-.overview-preview::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.76), transparent 62%); pointer-events: none; }
-.overview-preview img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(.85); transition: opacity .16s ease, transform .5s var(--ease); }
-.overview-preview.is-changing img { opacity: .25; transform: scale(1.02); }
-.overview-preview figcaption {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 14px;
-  z-index: 2;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3px 16px;
-  align-items: end;
-  color: #fff;
-}
-.overview-preview-number { grid-row: 1 / span 2; align-self: end; font-size: 10px; }
-.overview-preview-title { font-size: clamp(22px, 2.4vw, 32px); line-height: 1; letter-spacing: -.04em; }
-.overview-preview-summary { font-size: 11px; }
-
 .intro {
   padding-top: 82px;
   padding-bottom: 150px;
@@ -462,18 +398,6 @@ footer { width: 100%; padding: 20px max(var(--pad), calc((100vw - var(--content)
   .overview-summary { max-width: none; justify-self: stretch; }
   .overview-summary > p { margin-bottom: 10px; font-size: 13px; }
   .overview-summary dl { display: none; }
-  .overview-work { margin-top: 38px; padding-top: 0; }
-  .overview-layout { grid-template-columns: 1fr; }
-  .overview-preview { display: none; }
-  .overview-list a { min-height: 47px; grid-template-columns: 30px 1.45fr .9fr 14px; gap: 7px; }
-  .overview-list a strong { font-size: 13px; }
-  .overview-list a em { font-size: 9px; text-align: right; }
-  .overview-list a.is-active { padding-inline: 0; background: transparent; color: var(--ink); }
-  .overview-list a.is-active span { color: var(--faint); }
-  .overview-list a.is-active em { color: var(--muted); }
-  .overview-list a:focus-visible { padding-inline: 10px; background: var(--ink); color: var(--paper); }
-  .overview-list a:focus-visible span,
-  .overview-list a:focus-visible em { color: var(--paper); }
   .intro, .section-title-row, .chapter-heading, .case-intro, .split-case { grid-template-columns: 1fr; }
   .intro { padding-top: 55px; padding-bottom: 105px; }
   .intro-statement h2 { margin-bottom: 64px; }
