@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
             target: '#exhibition'
         },
         aicon: {
-            year: '2026',
+            year: '2025',
             category: 'GLOBAL B2B',
             title: 'GAME AiCON Seoul',
-            metric: '2026',
+            metric: '2025',
             metricLabel: '서울에서 열린 글로벌 게임 행사',
             summary: '개발사, 퍼블리셔, 투자자와 인디 스튜디오를 한자리에 연결했습니다.',
             image: 'images/gallery/aicone_1.jpeg',
