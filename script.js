@@ -1,28 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const root = document.documentElement;
-    const cover = document.querySelector('.cover');
     const header = document.querySelector('[data-site-header]');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let scrollFrame = null;
-
-    function updateHero() {
-        scrollFrame = null;
-        if (!cover || reducedMotion.matches) return;
-
-        const travel = Math.max(1, cover.offsetHeight - window.innerHeight);
-        const progress = Math.min(1, Math.max(0, window.scrollY / travel));
-        root.style.setProperty('--hero-progress', progress.toFixed(3));
-        if (header) header.classList.toggle('is-condensed', progress > 0.88);
+    function updateHeader() {
+        if (header) header.classList.toggle('is-condensed', window.scrollY > 16);
     }
-
-    function requestHeroUpdate() {
-        if (scrollFrame === null) scrollFrame = window.requestAnimationFrame(updateHero);
-    }
-
-    updateHero();
-    window.addEventListener('scroll', requestHeroUpdate, { passive: true });
-    window.addEventListener('resize', requestHeroUpdate);
-    reducedMotion.addEventListener('change', requestHeroUpdate);
+    updateHeader();
+    window.addEventListener('scroll', updateHeader, { passive: true });
 
     const map = document.querySelector('.activity-map');
     const mapButtons = document.querySelectorAll('[data-map-project]');
@@ -35,6 +17,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const previewNumber = document.querySelector('.map-preview-number');
     const previewTitle = document.querySelector('.map-preview-title');
     const previewSummary = document.querySelector('.map-preview-summary');
+    const overviewButtons = document.querySelectorAll('[data-overview-project]');
+    const overviewPreview = document.querySelector('.overview-preview');
+    const overviewImage = document.querySelector('.overview-preview img');
+    const overviewNumber = document.querySelector('.overview-preview-number');
+    const overviewTitle = document.querySelector('.overview-preview-title');
+    const overviewSummary = document.querySelector('.overview-preview-summary');
+    let overviewTimer = null;
 
     const projectData = {
         anti: {
@@ -92,6 +81,35 @@ document.addEventListener('DOMContentLoaded', function () {
             target: '#mmca'
         }
     };
+
+    function showOverviewProject(key) {
+        const project = projectData[key];
+        if (!project || !overviewPreview) return;
+
+        overviewButtons.forEach(function (button) {
+            button.classList.toggle('is-active', button.dataset.overviewProject === key);
+        });
+        overviewPreview.classList.add('is-changing');
+
+        window.clearTimeout(overviewTimer);
+        overviewTimer = window.setTimeout(function () {
+            overviewImage.src = project.image;
+            overviewImage.alt = project.title + ' 프로젝트 미리보기';
+            overviewNumber.textContent = project.previewNumber;
+            overviewTitle.textContent = project.title;
+            overviewSummary.textContent = project.summary;
+            overviewPreview.classList.remove('is-changing');
+        }, 90);
+    }
+
+    overviewButtons.forEach(function (button) {
+        button.addEventListener('mouseenter', function () {
+            showOverviewProject(button.dataset.overviewProject);
+        });
+        button.addEventListener('focus', function () {
+            showOverviewProject(button.dataset.overviewProject);
+        });
+    });
 
     function showProject(key) {
         const project = projectData[key];
