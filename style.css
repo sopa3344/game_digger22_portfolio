@@ -378,7 +378,7 @@ dl { margin: 0; border-top: 1px solid var(--line); }
 dl > div { padding: 8px 0; display: grid; grid-template-columns: 92px 1fr; gap: 10px; border-bottom: 1px solid var(--soft-line); font-size: 12px; }
 dt { color: var(--muted); }
 dd { margin: 0; }
-.hero-image img { width: 100%; max-height: 760px; display: block; object-fit: cover; filter: saturate(.88); }
+.hero-image img { width: 100%; max-height: 760px; aspect-ratio: 16 / 9; display: block; object-fit: cover; filter: saturate(.88); }
 figcaption { margin-top: 8px; color: var(--muted); font-size: 10px; line-height: 1.45; letter-spacing: .01em; }
 .image-pair, .logitech-images { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: stretch; }
 .image-pair img, .logitech-images img { width: 100%; aspect-ratio: 4 / 3; display: block; object-fit: cover; }
@@ -468,6 +468,12 @@ footer { width: 100%; padding: 20px max(var(--pad), calc((100vw - var(--content)
   .overview-list a { min-height: 47px; grid-template-columns: 30px 1.45fr .9fr 14px; gap: 7px; }
   .overview-list a strong { font-size: 13px; }
   .overview-list a em { font-size: 9px; text-align: right; }
+  .overview-list a.is-active { padding-inline: 0; background: transparent; color: var(--ink); }
+  .overview-list a.is-active span { color: var(--faint); }
+  .overview-list a.is-active em { color: var(--muted); }
+  .overview-list a:focus-visible { padding-inline: 10px; background: var(--ink); color: var(--paper); }
+  .overview-list a:focus-visible span,
+  .overview-list a:focus-visible em { color: var(--paper); }
   .intro, .section-title-row, .chapter-heading, .case-intro, .split-case { grid-template-columns: 1fr; }
   .intro { padding-top: 55px; padding-bottom: 105px; }
   .intro-statement h2 { margin-bottom: 64px; }
