@@ -6,133 +6,129 @@ document.addEventListener('DOMContentLoaded', function () {
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
 
-    const map = document.querySelector('.activity-map');
-    const mapButtons = document.querySelectorAll('[data-map-project]');
-    const mapLines = document.querySelectorAll('[data-map-line]');
-    const detailNumber = document.querySelector('.map-detail-number');
-    const detailTitle = document.querySelector('.map-detail-title');
-    const detailDescription = document.querySelector('.map-detail-description');
-    const detailLink = document.querySelector('.map-detail-link');
-    const previewImage = document.querySelector('.map-preview-image');
-    const previewNumber = document.querySelector('.map-preview-number');
-    const previewTitle = document.querySelector('.map-preview-title');
-    const previewSummary = document.querySelector('.map-preview-summary');
-
-    const projectData = {
+    const timeline = document.querySelector('[data-activity-timeline]');
+    const activityData = {
         anti: {
-            number: '01',
+            year: '2024',
+            category: 'GAME · PM',
             title: 'Anti-V: Reboot',
-            description: '게임 PM · 사업 총괄 · 데프캣 스튜디오',
-            previewNumber: '01 / GAME',
-            summary: '좋아하는 마음을 게임으로 완성했습니다.',
+            metric: '1→TEAM',
+            metricLabel: '1인 개발에서 팀으로 성장',
+            summary: '좋아하는 마음을 실제 플레이 경험으로 완성했습니다.',
             image: 'images/gallery/antiv_1.png',
+            alt: 'Anti-V: Reboot 게임 플레이 화면',
             target: '#anti-v'
         },
-        aicon: {
-            number: '02',
-            title: 'GAME AiCON Seoul',
-            description: '글로벌 게임 B2B 행사 · Organizer',
-            previewNumber: '02 / EXHIBITION',
-            summary: '아시아의 게임 산업을 서울에서 연결했습니다.',
-            image: 'images/gallery/aicone_1.jpeg',
-            target: '#game-aicon'
-        },
-        logitech: {
-            number: '03',
-            title: 'Logitech × UNITE Seoul',
-            description: 'MX Master 4 체험 게임 · 30초 · 800회 이상 플레이',
-            previewNumber: '03 / BRAND EXPERIENCE',
-            summary: '제품의 기능을 30초의 플레이로 번역했습니다.',
-            image: 'images/gallery/logitech_mx_master4_gameplay.png',
-            target: '#logitech'
-        },
-        town: {
-            number: '04',
-            title: 'Seoul Game Town 1·2',
-            description: '인디게임 전시 공동 기획·운영 · 누적 펀딩 1,810만 원+',
-            previewNumber: '04 / EXHIBITION',
-            summary: '모든 게임이 존중받는 전시장을 만들었습니다.',
-            image: 'images/gallery/seoulgametown_group.png',
-            target: '#exhibition'
-        },
         huddlers: {
-            number: '05',
+            year: '2025',
+            category: 'COMMUNITY',
             title: 'Game Huddlers',
-            description: '게임 개발자 300명 · 유타대학교 협업 · 연 3회 행사',
-            previewNumber: '05 / COMMUNITY',
-            summary: '개발자 300명이 서로의 다음 프로젝트를 돕습니다.',
+            metric: '300',
+            metricLabel: '게임 개발자 커뮤니티 멤버',
+            summary: '유타대학교와 협업하며 개발자의 다음 프로젝트를 연결합니다.',
             image: 'images/gallery/me.jpeg',
+            alt: 'Game Huddlers 커뮤니티 발표 현장',
             target: '#game-huddlers'
         },
+        town1: {
+            year: '2025',
+            category: 'EXHIBITION',
+            title: 'Seoul Game Town 1',
+            metric: '565%',
+            metricLabel: '크라우드 펀딩 달성률',
+            summary: '심사와 장르의 경계 없이 모든 게임이 존중받는 전시를 열었습니다.',
+            image: 'images/gallery/seoulgametown_1.jpeg',
+            alt: '서울게임타운 1 전시 현장',
+            target: '#exhibition'
+        },
+        logitech: {
+            year: '2026',
+            category: 'BRAND EXPERIENCE',
+            title: 'Logitech × UNITE Seoul',
+            metric: '800+',
+            metricLabel: '현장 체험 게임 플레이',
+            summary: 'MX Master 4의 기능을 30초의 직관적인 플레이로 번역했습니다.',
+            image: 'images/gallery/logitech_mx_master4_gameplay.png',
+            alt: 'MX Master 4 Actions Ring 체험 게임 화면',
+            target: '#logitech'
+        },
+        town2: {
+            year: '2026',
+            category: 'EXHIBITION',
+            title: 'Seoul Game Town 2',
+            metric: '488%',
+            metricLabel: '크라우드 펀딩 달성률',
+            summary: '두 번째 전시를 판교로 확장해 더 많은 창작자와 관객을 만났습니다.',
+            image: 'images/gallery/seoulgametowin_2.jpeg',
+            alt: '서울게임타운 2 전시 현장',
+            target: '#exhibition'
+        },
+        aicon: {
+            year: '2026',
+            category: 'GLOBAL B2B',
+            title: 'GAME AiCON Seoul',
+            metric: '2026',
+            metricLabel: '서울에서 열린 글로벌 게임 행사',
+            summary: '개발사, 퍼블리셔, 투자자와 인디 스튜디오를 한자리에 연결했습니다.',
+            image: 'images/gallery/aicone_1.jpeg',
+            alt: 'GAME AiCON Seoul 행사 현장',
+            target: '#game-aicon'
+        },
         mmca: {
-            number: '06',
+            year: '2026',
+            category: 'CULTURE',
             title: 'MMCA Advisory Panel',
-            description: '국립현대미술관 제13기 고객자문단 · 관람 경험 개선',
-            previewNumber: '06 / CULTURE',
+            metric: '13TH',
+            metricLabel: '국립현대미술관 고객자문단',
             summary: '관람객의 눈으로 미술관의 경험을 다시 보았습니다.',
             image: 'images/gallery/mmca_advisory_session.jpg',
+            alt: '국립현대미술관 고객자문단 활동 현장',
             target: '#mmca'
         }
     };
 
-    function showProject(key) {
-        const project = projectData[key];
-        if (!project || !map) return;
+    if (timeline) {
+        const activityButtons = timeline.querySelectorAll('[data-activity-key]');
+        const timelineLink = timeline.querySelector('[data-timeline-link]');
+        const timelineImage = timeline.querySelector('[data-timeline-image]');
+        const timelineYear = timeline.querySelector('[data-timeline-year]');
+        const timelineCategory = timeline.querySelector('[data-timeline-category]');
+        const timelineMetric = timeline.querySelector('[data-timeline-metric]');
+        const timelineMetricLabel = timeline.querySelector('[data-timeline-metric-label]');
+        const timelineTitle = timeline.querySelector('[data-timeline-title]');
+        const timelineSummary = timeline.querySelector('[data-timeline-summary]');
+        let activityTransitionTimer = null;
 
-        map.dataset.active = key;
-        map.classList.add('has-preview');
-        mapButtons.forEach(function (button) {
-            const isSelected = button.dataset.mapProject === key;
-            button.classList.toggle('is-active', isSelected);
-        });
-        mapLines.forEach(function (line) {
-            line.classList.toggle('is-active', line.dataset.mapLine === key);
-        });
+        function showActivity(key) {
+            const activity = activityData[key];
+            if (!activity) return;
+            activityButtons.forEach(function (button) {
+                const isSelected = button.dataset.activityKey === key;
+                button.setAttribute('aria-pressed', String(isSelected));
+                button.classList.toggle('is-active', isSelected);
+            });
+            timeline.classList.add('is-changing');
+            window.clearTimeout(activityTransitionTimer);
+            activityTransitionTimer = window.setTimeout(function () {
+                timelineImage.src = activity.image;
+                timelineImage.alt = activity.alt;
+                timelineYear.textContent = activity.year;
+                timelineCategory.textContent = activity.category;
+                timelineMetric.textContent = activity.metric;
+                timelineMetricLabel.textContent = activity.metricLabel;
+                timelineTitle.textContent = activity.title;
+                timelineSummary.textContent = activity.summary;
+                timelineLink.href = activity.target;
+                timeline.classList.remove('is-changing');
+            }, 110);
+        }
 
-        detailNumber.textContent = project.number;
-        detailTitle.textContent = project.title;
-        detailDescription.textContent = project.description;
-        detailLink.textContent = '상세 활동으로 이동 ↓';
-        detailLink.href = project.target;
-        detailLink.hidden = false;
-
-        previewImage.src = project.image;
-        previewNumber.textContent = project.previewNumber;
-        previewTitle.textContent = project.title;
-        previewSummary.textContent = project.summary;
-    }
-
-    function clearProject() {
-        if (!map) return;
-        map.classList.remove('has-preview');
-        map.removeAttribute('data-active');
-        mapButtons.forEach(function (button) {
-            button.classList.remove('is-active');
-        });
-        mapLines.forEach(function (line) {
-            line.classList.remove('is-active');
-        });
-        detailNumber.textContent = '—';
-        detailTitle.textContent = '활동을 선택해 보세요.';
-        detailDescription.textContent = '클릭하면 해당 프로젝트의 상세 기록으로 이동합니다.';
-        detailLink.hidden = true;
-    }
-
-    mapButtons.forEach(function (button) {
-        button.addEventListener('mouseenter', function () {
-            showProject(button.dataset.mapProject);
-        });
-        button.addEventListener('focus', function () {
-            showProject(button.dataset.mapProject);
-        });
-    });
-
-    if (map) {
-        map.addEventListener('mouseleave', clearProject);
-        map.addEventListener('focusout', function () {
-            window.setTimeout(function () {
-                if (!map.contains(document.activeElement)) clearProject();
-            }, 0);
+        activityButtons.forEach(function (button) {
+            ['mouseenter', 'focus', 'click'].forEach(function (eventName) {
+                button.addEventListener(eventName, function () {
+                    showActivity(button.dataset.activityKey);
+                });
+            });
         });
     }
 

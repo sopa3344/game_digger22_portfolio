@@ -97,50 +97,80 @@
     <section class="map-section" id="activity-map">
       <div class="section-title-row">
         <div class="section-label">
-          <strong>활동 안내도</strong>
-          <span>Activity Map</span>
+          <strong>연도별 활동</strong>
+          <span>Activity Timeline</span>
         </div>
-        <p>프로젝트를 선택하면 연결된 역할, 기관, 성과와 보도를 확인할 수 있습니다.</p>
+        <p>연도별 대표 로고를 선택하면 프로젝트의 장면과 핵심 성과를 확인할 수 있습니다.</p>
       </div>
 
-      <div class="activity-map" role="group" aria-label="장은태 활동 연결 지도">
-        <div class="map-preview" aria-hidden="true">
-          <img class="map-preview-image" src="images/gallery/antiv_1.png" alt="" loading="lazy" decoding="async">
-          <div class="map-preview-copy">
-            <span class="map-preview-number">01 / GAME</span>
-            <strong class="map-preview-title">Anti-V: Reboot</strong>
-            <p class="map-preview-summary">좋아하는 마음을 게임으로 완성했습니다.</p>
-          </div>
+      <div class="activity-timeline" data-activity-timeline>
+        <div class="timeline-years" aria-label="2024년부터 2026년까지의 대표 활동">
+          <section class="timeline-year-group" aria-labelledby="timeline-2024">
+            <header><strong id="timeline-2024">2024</strong><span>Starting Point</span></header>
+            <div class="timeline-activities">
+              <button class="timeline-activity is-active" type="button" data-activity-key="anti" aria-pressed="true">
+                <span class="timeline-logo logo-badge"><img src="images/project_category_icons/antiv.png" alt=""></span>
+                <span><strong>Anti-V: Reboot</strong><small>Game PM</small></span>
+              </button>
+            </div>
+          </section>
+
+          <section class="timeline-year-group" aria-labelledby="timeline-2025">
+            <header><strong id="timeline-2025">2025</strong><span>Expansion</span></header>
+            <div class="timeline-activities">
+              <button class="timeline-activity" type="button" data-activity-key="town1" aria-pressed="false">
+                <span class="timeline-logo logo-badge"><img src="images/project_category_icons/seoulgametown.jpeg" alt=""></span>
+                <span><strong>Seoul Game Town 1</strong><small>Exhibition</small></span>
+              </button>
+              <button class="timeline-activity" type="button" data-activity-key="huddlers" aria-pressed="false">
+                <span class="timeline-logo logo-pixel"><img src="images/activity_images/cathand_32x32_500.png" alt=""></span>
+                <span><strong>Game Huddlers</strong><small>Community</small></span>
+              </button>
+            </div>
+          </section>
+
+          <section class="timeline-year-group" aria-labelledby="timeline-2026">
+            <header><strong id="timeline-2026">2026</strong><span>Connection</span></header>
+            <div class="timeline-activities">
+              <button class="timeline-activity" type="button" data-activity-key="town2" aria-pressed="false">
+                <span class="timeline-logo logo-badge"><img src="images/project_category_icons/seoulgametown.jpeg" alt=""></span>
+                <span><strong>Seoul Game Town 2</strong><small>Exhibition</small></span>
+              </button>
+              <button class="timeline-activity" type="button" data-activity-key="logitech" aria-pressed="false">
+                <span class="timeline-logo logo-wide"><img src="images/project_category_icons/logitech.png" alt=""></span>
+                <span><strong>Logitech × UNITE</strong><small>Brand Experience</small></span>
+              </button>
+              <button class="timeline-activity" type="button" data-activity-key="aicon" aria-pressed="false">
+                <span class="timeline-logo logo-badge"><img src="images/project_category_icons/gameaicon.jpeg" alt=""></span>
+                <span><strong>GAME AiCON</strong><small>B2B · Organizer</small></span>
+              </button>
+              <button class="timeline-activity" type="button" data-activity-key="mmca" aria-pressed="false">
+                <span class="timeline-logo"><img src="images/logos-clean/mmca.png" alt=""></span>
+                <span><strong>MMCA Advisory</strong><small>Culture</small></span>
+              </button>
+            </div>
+          </section>
         </div>
 
-        <div class="map-line map-line-anti" data-map-line="anti"></div>
-        <div class="map-line map-line-aicon" data-map-line="aicon"></div>
-        <div class="map-line map-line-logitech" data-map-line="logitech"></div>
-        <div class="map-line map-line-town" data-map-line="town"></div>
-        <div class="map-line map-line-huddlers" data-map-line="huddlers"></div>
-        <div class="map-line map-line-mmca" data-map-line="mmca"></div>
-
-        <div class="map-center">
-          <img src="images/logos-clean/gamedigger22.png" alt="" loading="lazy" decoding="async">
-          <strong>장은태</strong>
-          <span>GAME DIGGER 22</span>
-        </div>
-
-        <a class="map-node map-node-anti" href="#anti-v" data-map-project="anti"><span>01</span>Anti-V: Reboot</a>
-        <a class="map-node map-node-aicon" href="#game-aicon" data-map-project="aicon"><span>02</span>GAME AiCON</a>
-        <a class="map-node map-node-logitech" href="#logitech" data-map-project="logitech"><span>03</span>Logitech × UNITE</a>
-        <a class="map-node map-node-town" href="#exhibition" data-map-project="town"><span>04</span>Seoul Game Town 1·2</a>
-        <a class="map-node map-node-huddlers" href="#game-huddlers" data-map-project="huddlers"><span>05</span>Game Huddlers</a>
-        <a class="map-node map-node-mmca" href="#mmca" data-map-project="mmca"><span>06</span>MMCA Advisory</a>
+        <a class="timeline-preview" href="#anti-v" data-timeline-link aria-live="polite">
+          <img class="timeline-preview-image" src="images/gallery/antiv_1.png" alt="Anti-V: Reboot 게임 플레이 화면" data-timeline-image loading="lazy" decoding="async">
+          <span class="timeline-preview-shade"></span>
+          <span class="timeline-preview-content">
+            <span class="timeline-preview-meta"><span data-timeline-year>2024</span><span data-timeline-category>GAME · PM</span></span>
+            <span class="timeline-metric"><strong data-timeline-metric>1→TEAM</strong><small data-timeline-metric-label>1인 개발에서 팀으로 성장</small></span>
+            <span class="timeline-preview-copy">
+              <strong data-timeline-title>Anti-V: Reboot</strong>
+              <span data-timeline-summary>좋아하는 마음을 실제 플레이 경험으로 완성했습니다.</span>
+            </span>
+            <span class="timeline-preview-action">상세 활동 보기 <b>↗</b></span>
+          </span>
+        </a>
       </div>
 
-      <div class="map-detail" aria-live="polite">
-        <span class="map-detail-number">—</span>
-        <div>
-          <strong class="map-detail-title">활동을 선택해 보세요.</strong>
-          <p class="map-detail-description">클릭하면 해당 프로젝트의 상세 기록으로 이동합니다.</p>
-        </div>
-        <a class="map-detail-link" href="#anti-v" hidden>상세 활동으로 이동 ↓</a>
+      <div class="timeline-caption">
+        <span>2024—2026</span>
+        <p>로고에 마우스를 올리거나 선택해 대표 이미지와 성과를 확인하세요.</p>
+        <span>7 PROJECTS</span>
       </div>
     </section>
 
