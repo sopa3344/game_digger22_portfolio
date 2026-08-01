@@ -432,9 +432,14 @@
 
     .news-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
       gap: 30px;
       margin-top: 40px;
+    }
+
+    .news-intro {
+      margin: 10px 0 0;
+      color: var(--muted);
     }
 
     .news-card {
@@ -452,6 +457,16 @@
 
     .news-card-content {
       padding: 0;
+    }
+
+    .news-project {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .news-card h4 {
