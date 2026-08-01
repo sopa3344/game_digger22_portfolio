@@ -196,7 +196,7 @@ figcaption { margin-top: 9px; color: var(--secondary); font-size: 11px; line-hei
 .case-kicker { margin: 0 0 15px; color: var(--secondary); font-size: 11px; font-weight: 600; letter-spacing: .04em; }
 .case-intro h3, .split-case h3 { margin: 0; font-size: clamp(31px, 4vw, 52px); line-height: 1.05; letter-spacing: -.055em; }
 .case-description { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }.case-description > p, .split-case-copy > p { margin: 0; font-size: 16px; line-height: 1.6; }
-.hero-image img { width: 100%; max-height: 740px; aspect-ratio: 16/9; display: block; object-fit: cover; border-radius: var(--r-md); }
+.hero-image img, .hero-video iframe { width: 100%; max-height: 740px; aspect-ratio: 16/9; display: block; object-fit: cover; border: 0; border-radius: var(--r-md); background: #000; }
 .exhibition-record { margin-top: 14px; padding: clamp(24px, 3.2vw, 40px); border-radius: var(--r-md); background: var(--bg); }
 .exhibition-record-heading { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 5vw, 64px); align-items: end; }
 .exhibition-record-heading h4 { margin: 0; font-size: clamp(27px, 3.2vw, 42px); line-height: 1.04; letter-spacing: -.05em; }
