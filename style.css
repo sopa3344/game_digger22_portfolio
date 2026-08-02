@@ -90,10 +90,9 @@ dl > div { min-height: 42px; padding: 9px 0; display: grid; grid-template-column
 dt { color: var(--secondary); }
 dd { margin: 0; }
 
-.cover-brand { min-height: 142px; padding: 8px 2px 16px; display: grid; grid-template-columns: 1.4fr .6fr; gap: 44px; align-items: end; }
+.cover-brand { min-height: 142px; padding: 12px 2px 24px; display: grid; grid-template-columns: 1.4fr .6fr; gap: 44px; align-items: end; }
 .brand-overline { margin: 0 0 12px; color: var(--secondary); font-size: 10px; font-weight: 600; letter-spacing: .075em; }
 .brand-wordmark { margin: 0; font-size: clamp(58px, 7vw, 100px); font-weight: 690; line-height: .82; letter-spacing: -.075em; white-space: nowrap; }
-.brand-definition { margin: 11px 0 0; color: var(--secondary); font-size: 10px; line-height: 1.4; }
 .cover-brand-copy { padding-bottom: 2px; }
 .cover-brand-copy strong { display: block; font-size: clamp(19px, 2vw, 25px); line-height: 1.14; letter-spacing: -.04em; }
 .cover-brand-copy p { max-width: 420px; margin: 12px 0 0; color: var(--secondary); font-size: 12px; line-height: 1.55; }
