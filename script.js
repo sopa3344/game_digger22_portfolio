@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
             summary: '좋아하는 게임을 아이디어에 머물게 하지 않기 위해 직접 만들었습니다. 퍼즐 액션의 기획 구조와 사업 방향, 개발 일정과 전시 준비를 연결했습니다.',
             image: 'images/gallery/antiv_1.png',
             alt: 'Anti-V: Reboot 게임 플레이 화면',
+            images: [
+                { src: 'images/gallery/antiv_1.png', alt: '장은태가 참여한 Anti-V: Reboot 현장 인터뷰' },
+                { src: 'images/gallery/7259BE58-8765-4726-9F64-CC3D5974900F_1_105_c.jpeg', alt: 'Anti-V: Reboot 전시 현장의 장은태와 개발팀' },
+                { src: 'images/gallery/antiv_2.jpeg', alt: 'Anti-V: Reboot 전시 부스와 플레이 현장' },
+                { src: 'images/gallery/stove_weekly_rank_1.png', alt: 'Anti-V: Reboot STOVE 주간 게임 1위 기록' }
+            ],
             target: 'https://youtu.be/nxKyHyCmoQI?si=X5nl69MnRYazcXUD'
         },
         huddlers: {
@@ -46,6 +52,10 @@ document.addEventListener('DOMContentLoaded', function () {
             summary: 'MX Master 4의 Actions Ring을 자연스럽게 이해하도록 30초 체험 게임을 직접 기획·개발했습니다. 게임의 언어로 제품 기능을 참여 가능한 경험으로 번역했습니다.',
             image: 'images/gallery/logitech_mx_master4_gameplay.png',
             alt: 'MX Master 4 Actions Ring 체험 게임 화면',
+            images: [
+                { src: 'images/gallery/logitech_mx_master4_gameplay.png', alt: 'MX Master 4 Actions Ring 체험 게임 화면' },
+                { src: 'images/gallery/logitech_mx_master4_leaderboard.png', alt: 'MX Master 4 체험 게임 리더보드' }
+            ],
             target: 'https://mx-master-4-master-reveal-seoul.game-digger22.chatgpt.site/'
         },
         town2: {
@@ -56,8 +66,13 @@ document.addEventListener('DOMContentLoaded', function () {
             metric: '1·2회',
             metricLabel: '인디게임 전시 기획·운영',
             summary: '심사와 장르의 경계 없이 창작자가 관객을 만나는 인디게임 전시를 시작하고 판교까지 확장했습니다. 두 번의 행사를 통해 누적 1,810만 원 이상의 펀딩을 달성했으며 현재도 활동을 이어가고 있습니다.',
-            image: 'images/gallery/seoulgametowin_2.jpeg',
-            alt: '서울게임타운 2 전시 현장',
+            image: 'images/gallery/seoulgametown_group.png',
+            alt: '장은태가 참여한 서울게임타운 운영진과 참가자 단체 사진',
+            images: [
+                { src: 'images/gallery/seoulgametown_group.png', alt: '장은태가 참여한 서울게임타운 운영진과 참가자 단체 사진' },
+                { src: 'images/gallery/seoulgametown_1.jpeg', alt: '서울게임타운 1 전시 현장' },
+                { src: 'images/gallery/seoulgametowin_2.jpeg', alt: '서울게임타운 2 참여 현장' }
+            ],
             target: 'https://tumblbug.com/seoulgametown2'
         },
         aicon: {
@@ -69,7 +84,11 @@ document.addEventListener('DOMContentLoaded', function () {
             metricLabel: '글로벌 게임 네트워킹',
             summary: '글로벌 퍼블리셔, 개발사, 투자자와 인디 스튜디오가 연결되는 자리를 직접 기획하고 운영했습니다. 게임을 만드는 사람들의 만남을 설계했습니다.',
             image: 'images/gallery/aicone_1.jpeg',
-            alt: 'GAME AiCON Seoul 행사 현장',
+            alt: 'GAME AiCON Seoul 행사 현장의 장은태',
+            images: [
+                { src: 'images/gallery/aicone_1.jpeg', alt: 'GAME AiCON Seoul 행사 현장의 장은태' },
+                { src: 'images/gallery/aicon_2.jpeg', alt: 'GAME AiCON Seoul 운영진 단체 사진' }
+            ],
             target: 'https://www.gameaicon.com'
         },
         mmca: {
@@ -80,8 +99,13 @@ document.addEventListener('DOMContentLoaded', function () {
             metric: '13TH',
             metricLabel: '국립현대미술관 고객자문단',
             summary: '《데이미언 허스트》와 《방혜자》 전시의 이동, 안내, 몰입과 쾌적도를 분석했습니다. 게임에서 익힌 경험 설계를 관람객과 미술관으로 확장해 개선안을 제안했습니다.',
-            image: 'images/gallery/mmca_advisory_session.jpg',
-            alt: '국립현대미술관 고객자문단 활동 현장',
+            image: 'images/gallery/mmca.png',
+            alt: '장은태가 참여한 국립현대미술관 고객자문단 단체 사진',
+            images: [
+                { src: 'images/gallery/mmca.png', alt: '장은태가 참여한 국립현대미술관 고객자문단 단체 사진' },
+                { src: 'images/gallery/mmca_advisory_session.jpg', alt: '국립현대미술관 고객자문단 활동 발표 현장' },
+                { src: 'images/gallery/mmca_presentation.png', alt: '국립현대미술관 고객자문단 제안 발표' }
+            ],
             target: 'https://www.mmca.go.kr/'
         },
         ambassador: {
@@ -94,6 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
             summary: '게임과 디지털 창작자의 관점으로 Logitech 제품과 경험을 소개합니다. 콘텐츠 제작과 현장 활동을 통해 브랜드와 사용자 사이의 접점을 넓히고 있습니다.',
             image: 'images/gallery/logitech_mx_master4_leaderboard.png',
             alt: 'Logitech Ambassador 활동과 MX Master 4 체험 게임 리더보드',
+            images: [
+                { src: 'images/gallery/logitech_mx_master4_leaderboard.png', alt: 'Logitech Ambassador 활동과 MX Master 4 체험 게임 리더보드' },
+                { src: 'images/gallery/logitech_mx_master4_gameplay.png', alt: 'MX Master 4 Actions Ring 체험 게임 화면' }
+            ],
             target: 'https://www.logitech.com/ko-kr'
         },
         dota: {
@@ -105,7 +133,12 @@ document.addEventListener('DOMContentLoaded', function () {
             metricLabel: '현재 활동 중',
             summary: 'Dota 2를 좋아하는 사람들이 함께 경기를 보고 교류하는 국내 오프라인 뷰잉 파티를 기획·운영하고 있습니다. 게임을 중심으로 팬들의 만남을 실제 공간으로 확장했습니다.',
             image: 'images/gallery/dota2_viewing_party.png',
-            alt: 'Dota 2 Korea Viewing Party 현장',
+            alt: '장은태가 참여한 Dota 2 Korea Viewing Party 운영진 단체 사진',
+            images: [
+                { src: 'images/gallery/dota2_viewing_party.png', alt: '장은태가 참여한 Dota 2 Korea Viewing Party 운영진 단체 사진' },
+                { src: 'images/gallery/dota2_2.jpeg', alt: 'Dota 2 Korea Viewing Party 관객 현장' },
+                { src: 'images/gallery/dota2_1.jpeg', alt: 'Dota 2 Korea Viewing Party 경기 관람 현장' }
+            ],
             target: 'https://www.youtube.com/watch?v=t-WpQNAKYL8'
         },
         instagram: {
@@ -116,8 +149,12 @@ document.addEventListener('DOMContentLoaded', function () {
             metric: '1,200+',
             metricLabel: 'Instagram Followers',
             summary: '게임 개발, 행사와 커뮤니티 활동을 기록하며 game_digger22의 관점을 꾸준히 공유하고 있습니다. 프로젝트의 결과뿐 아니라 만드는 과정과 현장의 사람들을 연결합니다.',
-            image: 'images/gamedigger22_logo.png',
-            alt: 'game_digger22 로고',
+            image: 'images/gallery/me.jpeg',
+            alt: 'game_digger22 활동을 발표하는 장은태',
+            images: [
+                { src: 'images/gallery/me.jpeg', alt: 'game_digger22 활동을 발표하는 장은태' },
+                { src: 'images/gamedigger22_logo.png', alt: 'game_digger22 로고' }
+            ],
             target: 'https://www.instagram.com/game_digger22/'
         }
     };
@@ -213,6 +250,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             });
         });
+
+        const initialActivity = timeline.querySelector('.timeline-activity.is-active') || activityButtons[0];
+        if (initialActivity) showActivity(initialActivity.dataset.activityKey);
     }
 
     const inlineSlideshows = document.querySelectorAll('[data-auto-slideshow]');
