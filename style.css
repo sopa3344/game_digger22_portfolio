@@ -91,11 +91,13 @@ dt { color: var(--secondary); }
 dd { margin: 0; }
 
 .brand-hero { flex: 1; min-height: calc(100svh - var(--header-h) - clamp(90px, 12vh, 150px)); display: flex; flex-direction: column; justify-content: center; }
-.brand-wordmark { margin: 0; display: grid; grid-template-columns: auto .9em auto; align-items: center; justify-content: start; font-size: clamp(62px, 8.25vw, 126px); font-weight: 690; line-height: .82; letter-spacing: -.075em; white-space: nowrap; }
-.brand-logo-stage { position: relative; width: .82em; height: .68em; margin: 0 .045em 0 .065em; overflow: hidden; display: block; border: 1px solid var(--line); border-radius: .05em; background: var(--surface); transition: transform .25s var(--ease-spring); }
+.brand-wordmark { margin: 0; display: grid; grid-template-columns: auto 1.98em auto; align-items: center; justify-content: start; font-size: clamp(62px, 8.25vw, 126px); font-weight: 690; line-height: .82; letter-spacing: -.075em; white-space: nowrap; }
+.brand-logo-stage { position: relative; width: 1.9em; height: 1.35em; margin: 0 .035em 0 .07em; overflow: visible; display: block; border: 0; border-radius: 0; background: transparent; transition: transform .25s var(--ease-spring); }
 .brand-logo-stage:hover, .brand-logo-stage:focus-visible { transform: translateY(-.035em); }
-.brand-logo-item { position: absolute; inset: 12%; width: 76%; height: 76%; object-fit: contain; opacity: 0; filter: saturate(.92); mix-blend-mode: multiply; transform: translateY(18%) scale(.84); transition: opacity .34s ease, transform .48s var(--ease-spring); }
-.brand-logo-item.brand-logo-badge { inset: 9%; width: 82%; height: 82%; border-radius: .07em; mix-blend-mode: normal; }
+.brand-logo-item { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; filter: saturate(.96); transform: translateY(18%) scale(.84); transition: opacity .34s ease, transform .48s var(--ease-spring); }
+.brand-logo-item.brand-logo-badge { inset: 5%; width: 90%; height: 90%; border-radius: .08em; mix-blend-mode: normal; }
+.brand-logo-item.brand-logo-cutout { mix-blend-mode: normal; }
+.brand-logo-item.brand-logo-multiply { mix-blend-mode: multiply; }
 .brand-logo-item.is-active { opacity: 1; transform: translateY(0) scale(1); }
 .brand-activity-bar { margin-top: 20px; }
 .brand-active-project { min-width: 0; display: flex; align-items: baseline; gap: 9px; }
@@ -231,7 +233,7 @@ footer { width: 100%; padding: 21px max(var(--pad), calc((100vw - var(--content)
   .site-brand img { width: 27px; height: 27px; }.site-brand strong { font-size: 12px; }.site-brand small { display: none; }
   .site-header nav { gap: 2px; font-size: 12px; }.site-header nav a:nth-child(1), .site-header nav a:nth-child(3), .site-header nav a:nth-child(4) { display: none; }.site-header nav a { padding-inline: 11px; }.site-header .nav-cta { padding-inline: 15px; }
   .cover { min-height: auto; padding-top: calc(var(--header-h) + 52px); padding-bottom: 26px; }
-  .brand-hero { min-height: auto; justify-content: flex-start; }.brand-wordmark { width: 100%; grid-template-columns: auto auto; justify-content: start; white-space: normal; line-height: .86; }.brand-wordmark-prefix { grid-column: 1; }.brand-logo-stage { grid-column: 2; width: .94em; height: .7em; margin: 0 0 0 .08em; }.brand-wordmark-suffix { grid-column: 1 / -1; }.brand-activity-bar { margin-top: 18px; }.brand-active-project { gap: 7px; }.brand-signature { margin-top: 52px; }.brand-mission { max-width: 330px; font-size: 29px; }
+  .brand-hero { min-height: auto; justify-content: flex-start; }.brand-wordmark { width: 100%; grid-template-columns: auto auto; justify-content: start; white-space: normal; line-height: .86; }.brand-wordmark-prefix { grid-column: 1; }.brand-logo-stage { grid-column: 2; width: 1.68em; height: 1.18em; margin: -.08em 0 -.06em .08em; }.brand-wordmark-suffix { grid-column: 1 / -1; }.brand-activity-bar { margin-top: 18px; }.brand-active-project { gap: 7px; }.brand-signature { margin-top: 52px; }.brand-mission { max-width: 330px; font-size: 29px; }
   .intro, .section-title-row, .chapter-heading, .case-intro, .split-case { grid-template-columns: 1fr; }
   .intro { margin-top: 12px; padding-top: 72px; padding-bottom: 82px; }.intro-statement h2 { margin-bottom: 56px; }.intro-essay p { font-size: 18px; }.profile-figure, .principle-list { grid-column: 1; }.profile-figure { margin-top: 50px; grid-template-columns: 1fr; }.profile-figure img { max-width: none; }.profile-figure figcaption { justify-self: stretch; flex-direction: row; justify-content: space-between; text-align: left; }.principle-list { margin-top: 60px; grid-template-columns: 1fr; }.principle-list a { min-height: 96px; }
   .map-section, .archive, .awards, .press, .chapter { padding-top: 90px; padding-bottom: 100px; }.section-title-row > p { margin-top: 34px; font-size: 17px; }
