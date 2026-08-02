@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: 'Maple Camp', role: 'Award · 2025', target: '#awards' },
             { name: 'STOVE Crew', role: 'Creator Program', target: '#archive' }
         ];
-        const logos = Array.from(brandHero.querySelectorAll('[data-brand-logo]'));
+        const slides = Array.from(brandHero.querySelectorAll('[data-brand-slide]'));
         const brandLink = brandHero.querySelector('[data-brand-link]');
         const name = brandHero.querySelector('[data-brand-name]');
         const role = brandHero.querySelector('[data-brand-role]');
@@ -153,12 +153,17 @@ document.addEventListener('DOMContentLoaded', function () {
         let activeIndex = 0;
         let autoplayTimer = null;
         let isVisible = true;
+        let isBooting = true;
 
         function showBrandItem(index) {
             activeIndex = (index + brandItems.length) % brandItems.length;
             const item = brandItems[activeIndex];
-            logos.forEach(function (logo, logoIndex) {
-                logo.classList.toggle('is-active', logoIndex === activeIndex);
+            const previousIndex = (activeIndex - 1 + brandItems.length) % brandItems.length;
+            const nextIndex = (activeIndex + 1) % brandItems.length;
+            slides.forEach(function (slide, slideIndex) {
+                slide.classList.toggle('is-active', slideIndex === activeIndex);
+                slide.classList.toggle('is-prev', slideIndex === previousIndex);
+                slide.classList.toggle('is-next', slideIndex === nextIndex);
             });
             name.textContent = item.name;
             role.textContent = item.role;
@@ -173,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function startAutoplay() {
             stopAutoplay();
-            if (reducedMotion.matches || !isVisible) return;
+            if (reducedMotion.matches || !isVisible || isBooting || brandHero.matches(':hover') || brandHero.contains(document.activeElement)) return;
             autoplayTimer = window.setInterval(function () {
                 showBrandItem(activeIndex + 1);
             }, 1800);
@@ -192,6 +197,15 @@ document.addEventListener('DOMContentLoaded', function () {
         brandHero.addEventListener('focusout', startAutoplay);
         reducedMotion.addEventListener('change', startAutoplay);
 
+        function finishBoot() {
+            if (!isBooting) return;
+            isBooting = false;
+            brandHero.classList.remove('is-booting');
+            brandHero.classList.add('is-ready');
+            showBrandItem(0);
+            startAutoplay();
+        }
+
         if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver(function (entries) {
                 isVisible = entries[0].isIntersecting;
@@ -203,6 +217,8 @@ document.addEventListener('DOMContentLoaded', function () {
             startAutoplay();
         }
         showBrandItem(0);
+        if (reducedMotion.matches) finishBoot();
+        else window.setTimeout(finishBoot, 1250);
     }
 });
 
