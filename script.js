@@ -156,21 +156,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let isVisible = true;
         let isBooting = true;
 
-        function syncLineWidth(slide) {
-            const image = slide.querySelector('img');
-            function applyWidth() {
-                const availableWidth = slide.clientWidth;
-                const availableHeight = slide.clientHeight;
-                if (!availableWidth || !availableHeight || !image.naturalWidth || !image.naturalHeight) return;
-                const imageRatio = image.naturalWidth / image.naturalHeight;
-                const fittedWidth = Math.min(availableWidth, availableHeight * imageRatio);
-                const minimumWidth = Math.min(availableWidth, 34);
-                brandLink.style.setProperty('--brand-line-width', Math.max(minimumWidth, fittedWidth) + 'px');
-            }
-            if (image.complete) window.requestAnimationFrame(applyWidth);
-            else image.addEventListener('load', applyWidth, { once: true });
-        }
-
         function showBrandItem(index, animate) {
             const nextIndex = (index + brandItems.length) % brandItems.length;
             const previousSlide = slides[activeIndex];
@@ -201,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             activeIndex = nextIndex;
             const item = brandItems[activeIndex];
-            syncLineWidth(nextSlide);
             name.textContent = item.name;
             role.textContent = item.role;
             brandLink.href = item.target;
@@ -233,7 +217,6 @@ document.addEventListener('DOMContentLoaded', function () {
         brandHero.addEventListener('focusin', stopAutoplay);
         brandHero.addEventListener('focusout', startAutoplay);
         reducedMotion.addEventListener('change', startAutoplay);
-        window.addEventListener('resize', function () { syncLineWidth(slides[activeIndex]); });
 
         function finishBoot() {
             if (!isBooting) return;
