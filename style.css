@@ -165,6 +165,7 @@ figcaption { margin-top: 9px; color: var(--secondary); font-size: 11px; line-hei
 .timeline-preview-action { margin-top: 23px; padding-top: 14px; display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.35); font-size: 12px; }
 .timeline-preview-action b { font-size: 16px; }
 .activity-timeline.is-changing .timeline-preview-image, .activity-timeline.is-changing .timeline-preview-content { opacity: .42; }
+.activity-timeline.is-image-changing .timeline-preview-image { opacity: .18; }
 
 .chapter { padding-top: 150px; padding-bottom: 170px; }
 .chapter + .chapter { border-top: 1px solid var(--line); }
@@ -179,6 +180,8 @@ figcaption { margin-top: 9px; color: var(--secondary); font-size: 11px; line-hei
 .case-description { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }.case-description > p, .split-case-copy > p { margin: 0; font-size: 16px; line-height: 1.6; }
 .project-lead-media { margin: 0; }
 .project-lead-media img, .project-lead-media iframe { width: 100%; max-height: 740px; aspect-ratio: 16/9; display: block; object-fit: cover; border: 0; border-radius: var(--r-md); background: #000; }
+.project-lead-media img[data-auto-slideshow] { transition: opacity .18s ease; }
+.project-lead-media img[data-auto-slideshow].is-slide-changing { opacity: .18; }
 .project-lead-media-contain img { object-fit: contain; background: #f2f2f4; }
 .project-lead-media figcaption, .project-support-media figcaption { margin-top: 7px; color: var(--secondary); font-size: 9px; line-height: 1.4; }
 .project-evidence { margin-top: 18px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }

@@ -28,8 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
             metric: '300명',
             metricLabel: '게임 개발자 커뮤니티 멤버',
             summary: '한 번의 만남이 계속 이어지도록 게임 개발자 Discord 커뮤니티를 만들었습니다. 유타대학교와 협업해 연 3회 오프라인 행사를 운영합니다.',
-            image: 'images/gallery/me.jpeg',
-            alt: 'Game Huddlers 커뮤니티 발표 현장',
+            image: 'images/gallery/game-huddlers-people.jpg',
+            alt: '장은태가 참여한 Game Huddlers 유타대학교 행사 현장',
+            images: [
+                { src: 'images/gallery/game-huddlers-people.jpg', alt: '장은태가 참여한 Game Huddlers 유타대학교 행사 현장' },
+                { src: 'images/gallery/game-huddlers-utah-stage.jpg', alt: 'Game Huddlers와 유타대학교 협업 행사 무대' }
+            ],
             target: 'https://discord.gg/jK9aqhKdnC'
         },
         logitech: {
@@ -131,10 +135,55 @@ document.addEventListener('DOMContentLoaded', function () {
         const timelineRole = timeline.querySelector('[data-timeline-role]');
         const timelineSummary = timeline.querySelector('[data-timeline-summary]');
         let activityTransitionTimer = null;
+        let activityImageTimer = null;
+        let activityImageTransitionTimer = null;
+        let selectedActivityKey = null;
+        let activityImageIndex = 0;
+        const reducedActivityMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        function getActivityImages(activity) {
+            if (Array.isArray(activity.images) && activity.images.length) return activity.images;
+            return [{ src: activity.image, alt: activity.alt }];
+        }
+
+        function setTimelineImage(slide, animate) {
+            window.clearTimeout(activityImageTransitionTimer);
+            if (!animate) {
+                timelineImage.src = slide.src;
+                timelineImage.alt = slide.alt;
+                timeline.classList.remove('is-image-changing');
+                return;
+            }
+            timeline.classList.add('is-image-changing');
+            activityImageTransitionTimer = window.setTimeout(function () {
+                timelineImage.src = slide.src;
+                timelineImage.alt = slide.alt;
+                timeline.classList.remove('is-image-changing');
+            }, 150);
+        }
+
+        function startActivityImages(key, activity) {
+            window.clearInterval(activityImageTimer);
+            const images = getActivityImages(activity);
+            activityImageIndex = 0;
+            setTimelineImage(images[0], false);
+            images.slice(1).forEach(function (slide) {
+                const preload = new Image();
+                preload.src = slide.src;
+            });
+            if (images.length < 2 || reducedActivityMotion.matches) return;
+            activityImageTimer = window.setInterval(function () {
+                if (selectedActivityKey !== key) return;
+                activityImageIndex = (activityImageIndex + 1) % images.length;
+                setTimelineImage(images[activityImageIndex], true);
+            }, 1000);
+        }
 
         function showActivity(key) {
             const activity = activityData[key];
             if (!activity) return;
+            selectedActivityKey = key;
+            window.clearInterval(activityImageTimer);
             activityButtons.forEach(function (button) {
                 const isSelected = button.dataset.activityKey === key;
                 button.setAttribute('aria-pressed', String(isSelected));
@@ -143,8 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
             timeline.classList.add('is-changing');
             window.clearTimeout(activityTransitionTimer);
             activityTransitionTimer = window.setTimeout(function () {
-                timelineImage.src = activity.image;
-                timelineImage.alt = activity.alt;
+                startActivityImages(key, activity);
                 timelineYear.textContent = activity.year;
                 timelineCategory.textContent = activity.category;
                 timelineMetric.textContent = activity.metric;
@@ -166,6 +214,64 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    const inlineSlideshows = document.querySelectorAll('[data-auto-slideshow]');
+    const reducedInlineMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    inlineSlideshows.forEach(function (image) {
+        const sources = (image.dataset.slideSrcs || '').split('|').filter(Boolean);
+        const alts = (image.dataset.slideAlts || '').split('|');
+        if (sources.length < 2 || reducedInlineMotion.matches) return;
+        sources.slice(1).forEach(function (source) {
+            const preload = new Image();
+            preload.src = source;
+        });
+        let index = 0;
+        let transitionTimer = null;
+        let slideshowTimer = null;
+
+        function showInlineSlide(nextIndex, animate) {
+            index = nextIndex;
+            if (!animate) {
+                image.src = sources[index];
+                image.alt = alts[index] || alts[0] || '';
+                image.classList.remove('is-slide-changing');
+                return;
+            }
+            image.classList.add('is-slide-changing');
+            window.clearTimeout(transitionTimer);
+            transitionTimer = window.setTimeout(function () {
+                image.src = sources[index];
+                image.alt = alts[index] || alts[0] || '';
+                image.classList.remove('is-slide-changing');
+            }, 150);
+        }
+
+        function startInlineSlideshow() {
+            window.clearInterval(slideshowTimer);
+            showInlineSlide(0, false);
+            slideshowTimer = window.setInterval(function () {
+                showInlineSlide((index + 1) % sources.length, true);
+            }, 1000);
+        }
+
+        function stopInlineSlideshow() {
+            window.clearInterval(slideshowTimer);
+            slideshowTimer = null;
+            showInlineSlide(0, false);
+        }
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) startInlineSlideshow();
+                    else stopInlineSlideshow();
+                });
+            }, { threshold: 0.35 });
+            observer.observe(image);
+        } else {
+            startInlineSlideshow();
+        }
+    });
 
     const brandHero = document.querySelector('[data-brand-hero]');
     if (brandHero) {
