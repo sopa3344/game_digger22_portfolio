@@ -305,9 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: 'Logitech', role: 'Brand Experience', target: '#activity-map', activityKey: 'logitech' },
             { name: 'UNITE Seoul', role: 'Interactive Exhibition', target: '#activity-map', activityKey: 'logitech' },
             { name: 'Seoul Game Town 1·2', role: 'Exhibition', target: '#activity-map', activityKey: 'town2' },
-            { name: 'MMCA Advisory', role: 'Culture', target: '#activity-map', activityKey: 'mmca' },
-            { name: 'Maple Camp', role: 'Award · 2025', target: '#awards' },
-            { name: 'STOVE Crew', role: 'Creator Program', target: '#activity-map' }
+            { name: 'MMCA Advisory', role: 'Culture', target: '#activity-map', activityKey: 'mmca' }
         ];
         const slides = Array.from(brandHero.querySelectorAll('[data-brand-slide]'));
         const brandLink = brandHero.querySelector('[data-brand-link]');
