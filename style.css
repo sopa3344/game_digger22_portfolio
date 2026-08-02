@@ -129,32 +129,32 @@ figcaption { margin-top: 9px; color: var(--secondary); font-size: 11px; line-hei
 .section-label { display: flex; flex-direction: column; }
 .section-label strong { font-size: clamp(44px, 5.6vw, 76px); font-weight: 690; line-height: .9; letter-spacing: -.06em; white-space: nowrap; }
 .section-label span { color: var(--secondary); font-size: 11px; }
-.activity-timeline { margin-top: 66px; display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 14px; align-items: start; }
-.activity-categories { height: 100%; padding: 12px 18px; overflow: hidden; display: grid; align-content: center; border-radius: var(--r-lg); background: var(--surface); }
-.activity-category { padding: 10px 0; display: grid; grid-template-columns: 94px minmax(0, 1fr); gap: 12px; align-items: center; border-top: 1px solid var(--line); }
+.activity-timeline { margin-top: 66px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: start; }
+.activity-categories { height: 100%; padding: 18px 20px; overflow: hidden; display: grid; grid-template-rows: minmax(74px, .95fr) minmax(148px, 1.7fr) minmax(82px, 1.1fr) minmax(74px, .95fr); align-content: stretch; border-radius: var(--r-lg); background: var(--surface); }
+.activity-category { padding: 12px 0; display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 14px; align-items: center; border-top: 1px solid var(--line); }
 .activity-category:first-child { border-top: 0; }
-.activity-category header { align-self: start; padding-top: 8px; display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 6px; color: var(--secondary); }
-.activity-category header > span { font-size: 9px; }
+.activity-category header { align-self: center; display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 7px; color: var(--secondary); }
+.activity-category header > span { font-size: 10px; }
 .activity-category header div { display: flex; flex-direction: column; }
-.activity-category header strong { color: var(--ink); font-size: 10px; letter-spacing: .04em; }
-.activity-category header small { margin-top: 3px; font-size: 8px; }
-.activity-category-items { min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.activity-category header strong { color: var(--ink); font-size: 12px; letter-spacing: .035em; }
+.activity-category header small { margin-top: 4px; font-size: 10px; }
+.activity-category-items { min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .category-single .timeline-activity { grid-column: 1 / -1; }
-.timeline-activity { min-width: 0; min-height: 52px; padding: 7px 9px; display: grid; grid-template-columns: minmax(0, 1fr) 14px; gap: 5px; align-items: center; border: 0; border-radius: 12px; background: transparent; color: var(--ink); text-align: left; cursor: pointer; transition: background .2s ease, box-shadow .2s ease; }
+.timeline-activity { min-width: 0; min-height: 64px; padding: 10px 11px; display: grid; grid-template-columns: minmax(0, 1fr) 16px; gap: 6px; align-items: center; border: 0; border-radius: 13px; background: transparent; color: var(--ink); text-align: left; cursor: pointer; transition: background .2s ease, box-shadow .2s ease; }
 .timeline-activity:hover { background: var(--bg); }
 .timeline-activity.is-active { background: #f1f1f3; box-shadow: inset 0 0 0 1px #d2d2d7; }
-.timeline-identity { min-width: 0; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 9px; align-items: center; }
+.timeline-identity { min-width: 0; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 10px; align-items: center; }
 .timeline-identity > span:last-child { min-width: 0; display: flex; flex-direction: column; }
-.timeline-activity strong { overflow: hidden; font-size: 11px; line-height: 1.2; white-space: nowrap; text-overflow: ellipsis; }
-.timeline-activity small { margin-top: 2px; overflow: hidden; color: var(--secondary); font-size: 8px; font-weight: 550; line-height: 1.15; white-space: nowrap; text-overflow: ellipsis; }
+.timeline-activity strong { overflow: hidden; display: -webkit-box; font-size: 13px; line-height: 1.16; white-space: normal; text-overflow: clip; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.timeline-activity small { margin-top: 3px; overflow: hidden; color: var(--secondary); font-size: 9.5px; font-weight: 550; line-height: 1.15; white-space: nowrap; text-overflow: ellipsis; }
 .timeline-activity.is-active small { color: var(--secondary); }
-.timeline-logo { width: 34px; height: 34px; padding: 5px; display: grid; place-items: center; overflow: hidden; border-radius: 9px; background: #fff; }
+.timeline-logo { width: 40px; height: 40px; padding: 6px; display: grid; place-items: center; overflow: hidden; border-radius: 10px; background: #fff; }
 .timeline-logo img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
 .timeline-logo.logo-badge { padding: 0; }
 .timeline-logo.logo-badge img { object-fit: cover; mix-blend-mode: normal; }
 .timeline-logo.logo-pixel img { image-rendering: pixelated; mix-blend-mode: normal; }
 .timeline-logo.logo-wide { padding: 5px; }
-.activity-arrow { color: #a1a1a6; font-size: 11px; text-align: right; transition: color .2s ease, transform .2s ease; }
+.activity-arrow { color: #a1a1a6; font-size: 13px; text-align: right; transition: color .2s ease, transform .2s ease; }
 .timeline-activity:hover .activity-arrow, .timeline-activity.is-active .activity-arrow { color: var(--accent); transform: translate(1px, -1px); }
 .timeline-preview { position: sticky; top: calc(var(--header-h) + 18px); min-height: 620px; overflow: hidden; border-radius: var(--r-lg); background: #111; color: #fff; box-shadow: 0 1px 0 rgba(0, 0, 0, .04); }
 .timeline-preview-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .18s ease, transform .65s var(--ease-spring); }
@@ -344,7 +344,7 @@ footer { width: 100%; padding: 21px max(var(--pad), calc((100vw - var(--content)
   .site-header nav a:nth-child(3) { display: none; }
   .brand-wordmark { font-size: clamp(57px, 9.2vw, 88px); }
   .profile-figure { grid-template-columns: 1.4fr .6fr; }
-  .activity-timeline { grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr); }
+  .activity-timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .timeline-year-group { grid-template-columns: 1fr; }
   .timeline-year-group header { flex-direction: row; align-items: baseline; justify-content: space-between; }
   .press-list a { grid-template-columns: 32px 1fr 80px 16px; }.press-list p { grid-column: 2 / -1; }
@@ -366,14 +366,14 @@ footer { width: 100%; padding: 21px max(var(--pad), calc((100vw - var(--content)
   .activity-categories { height: auto; padding: 0; overflow: visible; gap: 10px; background: transparent; }
   .activity-category { padding: 16px; grid-template-columns: 1fr; gap: 13px; border: 0; border-radius: var(--r-md); background: var(--surface); }
   .activity-category header { padding-top: 0; grid-template-columns: 24px minmax(0, 1fr); }
-  .activity-category header strong { font-size: 11px; }
-  .activity-category header small { font-size: 9px; }
+  .activity-category header strong { font-size: 12px; }
+  .activity-category header small { font-size: 10px; }
   .activity-category-items { grid-template-columns: 1fr; }
-  .timeline-activity { min-height: 68px; padding: 10px; }
-  .timeline-identity { grid-template-columns: 44px minmax(0, 1fr); }
-  .timeline-logo { width: 44px; height: 44px; border-radius: 11px; }
-  .timeline-activity strong { font-size: 12px; }
-  .timeline-activity small { margin-top: 4px; font-size: 9px; }
+  .timeline-activity { min-height: 74px; padding: 11px; }
+  .timeline-identity { grid-template-columns: 48px minmax(0, 1fr); }
+  .timeline-logo { width: 48px; height: 48px; border-radius: 12px; }
+  .timeline-activity strong { font-size: 14px; }
+  .timeline-activity small { margin-top: 4px; font-size: 10px; }
   .timeline-preview { position: relative; top: auto; min-height: 520px; }
   .timeline-preview-content { min-height: 520px; padding: 22px; }
   .timeline-metric { margin-top: 32px; }
