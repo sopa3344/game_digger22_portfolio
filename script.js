@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function startAutoplay() {
             stopAutoplay();
-            if (reducedMotion.matches || !isVisible || isBooting || brandHero.matches(':hover') || brandHero.contains(document.activeElement)) return;
+            if (reducedMotion.matches || !isVisible || isBooting) return;
             autoplayTimer = window.setInterval(function () {
                 showBrandItem(activeIndex + 1, true);
             }, 1450);
@@ -210,10 +210,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 startAutoplay();
             }
         });
-        brandHero.addEventListener('mouseenter', stopAutoplay);
-        brandHero.addEventListener('mouseleave', startAutoplay);
-        brandHero.addEventListener('focusin', stopAutoplay);
-        brandHero.addEventListener('focusout', startAutoplay);
         reducedMotion.addEventListener('change', startAutoplay);
 
         function finishBoot() {
