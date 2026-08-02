@@ -147,11 +147,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ];
         const logos = Array.from(brandHero.querySelectorAll('[data-brand-logo]'));
         const brandLink = brandHero.querySelector('[data-brand-link]');
-        const counter = brandHero.querySelector('[data-brand-counter]');
         const name = brandHero.querySelector('[data-brand-name]');
         const role = brandHero.querySelector('[data-brand-role]');
-        const previousButton = brandHero.querySelector('[data-brand-prev]');
-        const nextButton = brandHero.querySelector('[data-brand-next]');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         let activeIndex = 0;
         let autoplayTimer = null;
@@ -163,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function () {
             logos.forEach(function (logo, logoIndex) {
                 logo.classList.toggle('is-active', logoIndex === activeIndex);
             });
-            counter.textContent = String(activeIndex + 1).padStart(2, '0') + ' / ' + String(brandItems.length).padStart(2, '0');
             name.textContent = item.name;
             role.textContent = item.role;
             brandLink.href = item.target;
@@ -183,14 +179,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 2400);
         }
 
-        previousButton.addEventListener('click', function () {
-            showBrandItem(activeIndex - 1);
-            startAutoplay();
-        });
-        nextButton.addEventListener('click', function () {
-            showBrandItem(activeIndex + 1);
-            startAutoplay();
-        });
         brandLink.addEventListener('keydown', function (event) {
             if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
                 event.preventDefault();

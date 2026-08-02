@@ -85,10 +85,6 @@ main > section, #selected-work > section, .archive, .awards, .press {
 
 .cover { min-height: 100svh; padding-top: calc(var(--header-h) + clamp(46px, 6vh, 72px)); padding-bottom: 44px; display: flex; flex-direction: column; }
 .eyebrow { margin: 0 0 20px; color: var(--secondary); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
-.overview-summary { max-width: 420px; padding-bottom: 6px; justify-self: end; }
-.overview-summary > p { margin: 0 0 10px; font-size: 15px; line-height: 1.55; }
-.overview-summary > p:first-child { font-weight: 600; }
-.overview-summary dl { margin-top: 25px; }
 dl { margin: 0; border-top: 1px solid rgba(0, 0, 0, .25); }
 dl > div { min-height: 42px; padding: 9px 0; display: grid; grid-template-columns: 92px 1fr; gap: 12px; align-items: center; border-bottom: 1px solid var(--line); font-size: 12px; }
 dt { color: var(--secondary); }
@@ -96,23 +92,17 @@ dd { margin: 0; }
 
 .brand-hero { flex: 1; min-height: calc(100svh - var(--header-h) - clamp(90px, 12vh, 150px)); display: flex; flex-direction: column; justify-content: center; }
 .brand-wordmark { margin: 0; display: grid; grid-template-columns: auto .9em auto; align-items: center; justify-content: start; font-size: clamp(62px, 8.25vw, 126px); font-weight: 690; line-height: .82; letter-spacing: -.075em; white-space: nowrap; }
-.brand-logo-stage { position: relative; width: .82em; height: .68em; margin: 0 .08em 0 .11em; overflow: hidden; display: block; border: 1px solid var(--line); border-radius: .07em; background: var(--surface); box-shadow: 0 .05em .18em rgba(0, 0, 0, .06); transition: transform .25s var(--ease-spring), box-shadow .25s ease; }
-.brand-logo-stage:hover, .brand-logo-stage:focus-visible { transform: translateY(-.035em); box-shadow: 0 .08em .24em rgba(0, 0, 0, .11); }
+.brand-logo-stage { position: relative; width: .82em; height: .68em; margin: 0 .08em 0 .11em; overflow: hidden; display: block; border: 1px solid var(--line); border-radius: .05em; background: var(--surface); transition: transform .25s var(--ease-spring); }
+.brand-logo-stage:hover, .brand-logo-stage:focus-visible { transform: translateY(-.035em); }
 .brand-logo-item { position: absolute; inset: 12%; width: 76%; height: 76%; object-fit: contain; opacity: 0; filter: saturate(.92); mix-blend-mode: multiply; transform: translateY(18%) scale(.84); transition: opacity .34s ease, transform .48s var(--ease-spring); }
 .brand-logo-item.brand-logo-badge { inset: 9%; width: 82%; height: 82%; border-radius: .07em; mix-blend-mode: normal; }
 .brand-logo-item.is-active { opacity: 1; transform: translateY(0) scale(1); }
-.brand-activity-bar { margin-top: 26px; padding-top: 14px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); }
-.brand-active-project { min-width: 0; display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 14px; align-items: center; }
-.brand-active-project > span:first-child { color: var(--secondary); font-size: 10px; font-variant-numeric: tabular-nums; }
-.brand-active-project > span:last-child { display: flex; align-items: baseline; gap: 10px; }
-.brand-active-project strong { font-size: 14px; }
+.brand-activity-bar { margin-top: 20px; }
+.brand-active-project { min-width: 0; display: flex; align-items: baseline; gap: 9px; }
+.brand-active-project strong { font-size: 12px; }
 .brand-active-project small { color: var(--secondary); font-size: 10px; }
-.brand-controls { display: flex; gap: 7px; }
-.brand-controls button { width: 42px; height: 42px; border: 0; border-radius: 50%; background: #e2e2e7; color: #515154; cursor: pointer; font-size: 18px; transition: transform .18s var(--ease), background .18s ease; }
-.brand-controls button:hover { background: #d6d6dc; transform: scale(1.04); }
-.brand-controls button:active { transform: scale(.94); }
-.brand-intro { margin-top: clamp(52px, 8vh, 90px); display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(44px, 8vw, 110px); align-items: end; }
-.brand-mission { margin: 0; font-size: clamp(38px, 4.6vw, 66px); font-weight: 680; line-height: .98; letter-spacing: -.06em; }
+.brand-signature { margin-top: clamp(56px, 9vh, 96px); }
+.brand-mission { margin: 0; font-size: clamp(25px, 2.6vw, 36px); font-weight: 620; line-height: 1.08; letter-spacing: -.045em; }
 
 .intro { margin-top: 44px; padding-top: 150px; padding-bottom: 170px; display: grid; grid-template-columns: .72fr 1.28fr; gap: 32px; border-radius: var(--r-lg); background: var(--surface); }
 .section-index { margin: 0; color: var(--secondary); font-size: 12px; }
@@ -241,7 +231,7 @@ footer { width: 100%; padding: 21px max(var(--pad), calc((100vw - var(--content)
   .site-brand img { width: 27px; height: 27px; }.site-brand strong { font-size: 12px; }.site-brand small { display: none; }
   .site-header nav { gap: 2px; font-size: 12px; }.site-header nav a:nth-child(1), .site-header nav a:nth-child(3), .site-header nav a:nth-child(4) { display: none; }.site-header nav a { padding-inline: 11px; }.site-header .nav-cta { padding-inline: 15px; }
   .cover { min-height: auto; padding-top: calc(var(--header-h) + 52px); padding-bottom: 26px; }
-  .brand-hero { min-height: auto; justify-content: flex-start; }.brand-wordmark { width: 100%; grid-template-columns: auto auto; justify-content: end; white-space: normal; line-height: .86; }.brand-wordmark > span:first-child { grid-column: 1 / -1; }.brand-logo-stage { width: 1.05em; height: .75em; margin: .16em .12em 0 0; }.brand-wordmark > span:last-child { align-self: end; }.brand-activity-bar { margin-top: 22px; }.brand-active-project { grid-template-columns: 48px 1fr; }.brand-active-project > span:last-child { flex-direction: column; align-items: flex-start; gap: 1px; }.brand-intro { margin-top: 54px; grid-template-columns: 1fr; gap: 34px; align-items: start; }.brand-mission { font-size: clamp(40px, 12vw, 58px); }.overview-summary { max-width: none; justify-self: stretch; }.overview-summary dl { display: none; }
+  .brand-hero { min-height: auto; justify-content: flex-start; }.brand-wordmark { width: 100%; grid-template-columns: auto auto; justify-content: end; white-space: normal; line-height: .86; }.brand-wordmark > span:first-child { grid-column: 1 / -1; }.brand-logo-stage { width: 1.05em; height: .75em; margin: .16em .12em 0 0; }.brand-wordmark > span:last-child { align-self: end; }.brand-activity-bar { margin-top: 18px; }.brand-active-project { gap: 7px; }.brand-signature { margin-top: 52px; }.brand-mission { max-width: 330px; font-size: 29px; }
   .intro, .section-title-row, .chapter-heading, .case-intro, .split-case { grid-template-columns: 1fr; }
   .intro { margin-top: 12px; padding-top: 72px; padding-bottom: 82px; }.intro-statement h2 { margin-bottom: 56px; }.intro-essay p { font-size: 18px; }.profile-figure, .principle-list { grid-column: 1; }.profile-figure { margin-top: 50px; grid-template-columns: 1fr; }.profile-figure img { max-width: none; }.profile-figure figcaption { justify-self: stretch; flex-direction: row; justify-content: space-between; text-align: left; }.principle-list { margin-top: 60px; grid-template-columns: 1fr; }.principle-list a { min-height: 96px; }
   .map-section, .archive, .awards, .press, .chapter { padding-top: 90px; padding-bottom: 100px; }.section-title-row > p { margin-top: 34px; font-size: 17px; }
