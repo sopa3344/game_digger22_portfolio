@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
             metricLabel: '현장 체험 게임 플레이',
             summary: 'MX Master 4의 기능을 30초의 직관적인 플레이로 번역했습니다.',
             image: 'images/gallery/logitech_mx_master4_gameplay.png',
+            imageScale: '1.3',
+            imagePosition: '70% center',
             alt: 'MX Master 4 Actions Ring 체험 게임 화면',
             target: '#logitech'
         },
@@ -112,6 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
             activityTransitionTimer = window.setTimeout(function () {
                 timelineImage.src = activity.image;
                 timelineImage.alt = activity.alt;
+                timelineImage.style.setProperty('--preview-scale', activity.imageScale || '1');
+                timelineImage.style.objectPosition = activity.imagePosition || 'center';
                 timelineYear.textContent = activity.year;
                 timelineCategory.textContent = activity.category;
                 timelineMetric.textContent = activity.metric;
@@ -132,78 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const brandHero = document.querySelector('[data-brand-hero]');
-    if (brandHero) {
-        const brandItems = [
-            { name: 'Anti-V: Reboot', role: 'Game · PM', target: '#anti-v' },
-            { name: 'GAME AiCON Seoul', role: 'B2B · Organizer', target: '#game-aicon' },
-            { name: 'Logitech', role: 'Brand Experience', target: '#logitech' },
-            { name: 'UNITE Seoul', role: 'Interactive Exhibition', target: '#logitech' },
-            { name: 'Seoul Game Town 1·2', role: 'Exhibition', target: '#exhibition' },
-            { name: 'MMCA Advisory', role: 'Culture', target: '#mmca' },
-            { name: 'BUD Community', role: 'Community', target: '#archive' },
-            { name: 'Maple Camp', role: 'Award · 2025', target: '#awards' },
-            { name: 'STOVE Crew', role: 'Creator Program', target: '#archive' }
-        ];
-        const logos = Array.from(brandHero.querySelectorAll('[data-brand-logo]'));
-        const brandLink = brandHero.querySelector('[data-brand-link]');
-        const name = brandHero.querySelector('[data-brand-name]');
-        const role = brandHero.querySelector('[data-brand-role]');
-        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-        let activeIndex = 0;
-        let autoplayTimer = null;
-        let isVisible = true;
-
-        function showBrandItem(index) {
-            activeIndex = (index + brandItems.length) % brandItems.length;
-            const item = brandItems[activeIndex];
-            logos.forEach(function (logo, logoIndex) {
-                logo.classList.toggle('is-active', logoIndex === activeIndex);
-            });
-            name.textContent = item.name;
-            role.textContent = item.role;
-            brandLink.href = item.target;
-            brandLink.setAttribute('aria-label', item.name + ' 활동 보기');
-        }
-
-        function stopAutoplay() {
-            window.clearInterval(autoplayTimer);
-            autoplayTimer = null;
-        }
-
-        function startAutoplay() {
-            stopAutoplay();
-            if (reducedMotion.matches || !isVisible) return;
-            autoplayTimer = window.setInterval(function () {
-                showBrandItem(activeIndex + 1);
-            }, 2400);
-        }
-
-        brandLink.addEventListener('keydown', function (event) {
-            if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-                event.preventDefault();
-                showBrandItem(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
-                startAutoplay();
-            }
-        });
-        brandHero.addEventListener('mouseenter', stopAutoplay);
-        brandHero.addEventListener('mouseleave', startAutoplay);
-        brandHero.addEventListener('focusin', stopAutoplay);
-        brandHero.addEventListener('focusout', startAutoplay);
-        reducedMotion.addEventListener('change', startAutoplay);
-
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver(function (entries) {
-                isVisible = entries[0].isIntersecting;
-                if (isVisible) startAutoplay();
-                else stopAutoplay();
-            }, { threshold: .25 });
-            observer.observe(brandHero);
-        } else {
-            startAutoplay();
-        }
-        showBrandItem(0);
-    }
 });
 
 window.addEventListener('load', function () {
