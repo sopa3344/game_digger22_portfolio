@@ -132,47 +132,42 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const carousel = document.querySelector('[data-logo-carousel]');
-    if (carousel) {
-        const viewport = carousel.querySelector('[data-carousel-window]');
-        const cards = Array.from(carousel.querySelectorAll('.logo-card'));
-        const previousButton = carousel.querySelector('[data-carousel-prev]');
-        const nextButton = carousel.querySelector('[data-carousel-next]');
-        const currentLabel = carousel.querySelector('[data-carousel-current]');
-        const progress = carousel.querySelector('[data-carousel-progress]');
+    const brandHero = document.querySelector('[data-brand-hero]');
+    if (brandHero) {
+        const brandItems = [
+            { name: 'Anti-V: Reboot', role: 'Game · PM', target: '#anti-v' },
+            { name: 'GAME AiCON Seoul', role: 'B2B · Organizer', target: '#game-aicon' },
+            { name: 'Logitech', role: 'Brand Experience', target: '#logitech' },
+            { name: 'UNITE Seoul', role: 'Interactive Exhibition', target: '#logitech' },
+            { name: 'Seoul Game Town 1·2', role: 'Exhibition', target: '#exhibition' },
+            { name: 'MMCA Advisory', role: 'Culture', target: '#mmca' },
+            { name: 'BUD Community', role: 'Community', target: '#archive' },
+            { name: 'Maple Camp', role: 'Award · 2025', target: '#awards' },
+            { name: 'STOVE Crew', role: 'Creator Program', target: '#archive' }
+        ];
+        const logos = Array.from(brandHero.querySelectorAll('[data-brand-logo]'));
+        const brandLink = brandHero.querySelector('[data-brand-link]');
+        const counter = brandHero.querySelector('[data-brand-counter]');
+        const name = brandHero.querySelector('[data-brand-name]');
+        const role = brandHero.querySelector('[data-brand-role]');
+        const previousButton = brandHero.querySelector('[data-brand-prev]');
+        const nextButton = brandHero.querySelector('[data-brand-next]');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         let activeIndex = 0;
         let autoplayTimer = null;
         let isVisible = true;
 
-        function nearestCardIndex() {
-            const left = viewport.scrollLeft;
-            const start = cards[0].offsetLeft;
-            let closest = 0;
-            let distance = Infinity;
-            cards.forEach(function (card, index) {
-                const nextDistance = Math.abs((card.offsetLeft - start) - left);
-                if (nextDistance < distance) {
-                    closest = index;
-                    distance = nextDistance;
-                }
+        function showBrandItem(index) {
+            activeIndex = (index + brandItems.length) % brandItems.length;
+            const item = brandItems[activeIndex];
+            logos.forEach(function (logo, logoIndex) {
+                logo.classList.toggle('is-active', logoIndex === activeIndex);
             });
-            return closest;
-        }
-
-        function updateCarouselStatus(index) {
-            activeIndex = Math.max(0, Math.min(index, cards.length - 1));
-            currentLabel.textContent = String(activeIndex + 1).padStart(2, '0');
-            progress.style.width = (((activeIndex + 1) / cards.length) * 100) + '%';
-        }
-
-        function goToCard(index, behavior) {
-            const nextIndex = (index + cards.length) % cards.length;
-            viewport.scrollTo({
-                left: cards[nextIndex].offsetLeft - cards[0].offsetLeft,
-                behavior: behavior || (reducedMotion.matches ? 'auto' : 'smooth')
-            });
-            updateCarouselStatus(nextIndex);
+            counter.textContent = String(activeIndex + 1).padStart(2, '0') + ' / ' + String(brandItems.length).padStart(2, '0');
+            name.textContent = item.name;
+            role.textContent = item.role;
+            brandLink.href = item.target;
+            brandLink.setAttribute('aria-label', item.name + ' 활동 보기');
         }
 
         function stopAutoplay() {
@@ -184,35 +179,29 @@ document.addEventListener('DOMContentLoaded', function () {
             stopAutoplay();
             if (reducedMotion.matches || !isVisible) return;
             autoplayTimer = window.setInterval(function () {
-                goToCard(activeIndex + 1);
-            }, 4600);
+                showBrandItem(activeIndex + 1);
+            }, 2400);
         }
 
         previousButton.addEventListener('click', function () {
-            goToCard(activeIndex - 1);
+            showBrandItem(activeIndex - 1);
             startAutoplay();
         });
         nextButton.addEventListener('click', function () {
-            goToCard(activeIndex + 1);
+            showBrandItem(activeIndex + 1);
             startAutoplay();
         });
-        viewport.addEventListener('scroll', function () {
-            window.requestAnimationFrame(function () {
-                updateCarouselStatus(nearestCardIndex());
-            });
-        }, { passive: true });
-        viewport.addEventListener('keydown', function (event) {
+        brandLink.addEventListener('keydown', function (event) {
             if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
                 event.preventDefault();
-                goToCard(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
+                showBrandItem(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
+                startAutoplay();
             }
         });
-        carousel.addEventListener('mouseenter', stopAutoplay);
-        carousel.addEventListener('mouseleave', startAutoplay);
-        carousel.addEventListener('focusin', stopAutoplay);
-        carousel.addEventListener('focusout', startAutoplay);
-        viewport.addEventListener('pointerdown', stopAutoplay);
-        viewport.addEventListener('pointerup', startAutoplay);
+        brandHero.addEventListener('mouseenter', stopAutoplay);
+        brandHero.addEventListener('mouseleave', startAutoplay);
+        brandHero.addEventListener('focusin', stopAutoplay);
+        brandHero.addEventListener('focusout', startAutoplay);
         reducedMotion.addEventListener('change', startAutoplay);
 
         if ('IntersectionObserver' in window) {
@@ -221,11 +210,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (isVisible) startAutoplay();
                 else stopAutoplay();
             }, { threshold: .25 });
-            observer.observe(carousel);
+            observer.observe(brandHero);
         } else {
             startAutoplay();
         }
-        updateCarouselStatus(0);
+        showBrandItem(0);
     }
 });
 
