@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     previousSlide.classList.remove('is-exiting');
                     nextSlide.classList.remove('is-entering');
                     brandLink.classList.remove('is-switching');
-                }, 460);
+                }, 370);
             } else {
                 slides.forEach(function (slide) { slide.classList.remove('is-active', 'is-entering', 'is-exiting'); });
                 nextSlide.classList.add('is-active');
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (reducedMotion.matches || !isVisible || isBooting || brandHero.matches(':hover') || brandHero.contains(document.activeElement)) return;
             autoplayTimer = window.setInterval(function () {
                 showBrandItem(activeIndex + 1, true);
-            }, 1800);
+            }, 1450);
         }
 
         brandLink.addEventListener('keydown', function (event) {
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
             startAutoplay();
         }
         if (reducedMotion.matches) finishBoot();
-        else window.setTimeout(finishBoot, 1250);
+        else window.setTimeout(finishBoot, 1000);
     }
 });
 
