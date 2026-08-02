@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
             category: 'EXHIBITION',
             title: 'Seoul Game Town 1·2',
             role: '공동 기획·운영',
-            metric: '1·2회',
-            metricLabel: '인디게임 전시 기획·운영',
+            metric: '1,810만원',
+            metricLabel: '텀블벅 펀딩 성공',
             summary: '심사와 장르의 경계 없이 창작자가 관객을 만나는 인디게임 전시를 시작하고 판교까지 확장했습니다. 두 번의 행사를 통해 누적 1,810만 원 이상의 펀딩을 달성했으며 현재도 활동을 이어가고 있습니다.',
             image: 'images/gallery/seoulgametown_group.png',
             alt: '장은태가 참여한 서울게임타운 운영진과 참가자 단체 사진',
@@ -108,22 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             target: 'https://www.mmca.go.kr/'
         },
-        ambassador: {
-            year: '2026—현재',
-            category: 'AMBASSADOR',
-            title: 'Logitech Ambassador',
-            role: '콘텐츠 제작·현장 운영',
-            metric: '2026—',
-            metricLabel: '현재 활동 중',
-            summary: '게임과 디지털 창작자의 관점으로 Logitech 제품과 경험을 소개합니다. 콘텐츠 제작과 현장 활동을 통해 브랜드와 사용자 사이의 접점을 넓히고 있습니다.',
-            image: 'images/gallery/logitech_mx_master4_leaderboard.png',
-            alt: 'Logitech Ambassador 활동과 MX Master 4 체험 게임 리더보드',
-            images: [
-                { src: 'images/gallery/logitech_mx_master4_leaderboard.png', alt: 'Logitech Ambassador 활동과 MX Master 4 체험 게임 리더보드' },
-                { src: 'images/gallery/logitech_mx_master4_gameplay.png', alt: 'MX Master 4 Actions Ring 체험 게임 화면' }
-            ],
-            target: 'https://www.logitech.com/ko-kr'
-        },
         dota: {
             year: '2025—현재',
             category: 'COMMUNITY EVENT',
@@ -146,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
             category: 'GAME MEDIA',
             title: 'Instagram @game_digger22',
             role: '게임 콘텐츠·활동 기록',
-            metric: '1,200+',
+            metric: '1,300명',
             metricLabel: 'Instagram Followers',
             summary: '게임 개발, 행사와 커뮤니티 활동을 기록하며 game_digger22의 관점을 꾸준히 공유하고 있습니다. 프로젝트의 결과뿐 아니라 만드는 과정과 현장의 사람들을 연결합니다.',
             image: 'images/gallery/me.jpeg',
@@ -213,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (selectedActivityKey !== key) return;
                 activityImageIndex = (activityImageIndex + 1) % images.length;
                 setTimelineImage(images[activityImageIndex], true);
-            }, 1000);
+            }, 1500);
         }
 
         function showActivity(key) {
@@ -291,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showInlineSlide(0, false);
             slideshowTimer = window.setInterval(function () {
                 showInlineSlide((index + 1) % sources.length, true);
-            }, 1000);
+            }, 1500);
         }
 
         function stopInlineSlideshow() {
