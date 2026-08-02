@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (reducedMotion.matches || !isVisible) return;
             autoplayTimer = window.setInterval(function () {
                 showBrandItem(activeIndex + 1);
-            }, 2400);
+            }, 1800);
         }
 
         brandLink.addEventListener('keydown', function (event) {
