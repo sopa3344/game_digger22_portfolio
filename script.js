@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const activityData = {
         anti: {
             year: '2024—현재',
-            category: 'GAME · PM',
-            title: 'Anti-V: Reboot',
+            category: 'GAME STUDIO',
+            title: 'Cat Crunch Games',
             role: 'PM · 기획·사업 총괄',
             metric: '1·2위',
             metricLabel: 'STOVE 주간 게임',
@@ -32,18 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
             alt: 'Game Huddlers 커뮤니티 발표 현장',
             target: 'https://discord.gg/jK9aqhKdnC'
         },
-        town1: {
-            year: '2025',
-            category: 'EXHIBITION',
-            title: 'Seoul Game Town 1',
-            role: '공동 기획·운영',
-            metric: '565%',
-            metricLabel: '크라우드 펀딩 달성률',
-            summary: '심사와 장르의 경계 없이 창작자가 관객을 만나는 인디게임 전시를 공동 기획했습니다. 좋아하는 게임들이 존중받는 첫 번째 오프라인 자리를 만들었습니다.',
-            image: 'images/gallery/seoulgametown_1.jpeg',
-            alt: '서울게임타운 1 전시 현장',
-            target: 'https://tumblbug.com/seoulgametown'
-        },
         logitech: {
             year: '2026',
             category: 'BRAND EXPERIENCE',
@@ -57,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
             target: 'https://mx-master-4-master-reveal-seoul.game-digger22.chatgpt.site/'
         },
         town2: {
-            year: '2026',
+            year: '2025—현재',
             category: 'EXHIBITION',
-            title: 'Seoul Game Town 2',
+            title: 'Seoul Game Town 1·2',
             role: '공동 기획·운영',
-            metric: '488%',
-            metricLabel: '크라우드 펀딩 달성률',
-            summary: '첫 전시의 경험을 판교로 확장해 창작자와 관객의 두 번째 만남을 만들었습니다. 두 번의 행사를 통해 누적 1,810만 원 이상의 펀딩을 달성했습니다.',
+            metric: '1·2회',
+            metricLabel: '인디게임 전시 기획·운영',
+            summary: '심사와 장르의 경계 없이 창작자가 관객을 만나는 인디게임 전시를 시작하고 판교까지 확장했습니다. 두 번의 행사를 통해 누적 1,810만 원 이상의 펀딩을 달성했으며 현재도 활동을 이어가고 있습니다.',
             image: 'images/gallery/seoulgametowin_2.jpeg',
             alt: '서울게임타운 2 전시 현장',
             target: 'https://tumblbug.com/seoulgametown2'
@@ -81,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
             target: 'https://www.gameaicon.com'
         },
         mmca: {
-            year: '2026',
+            year: '2026—현재',
             category: 'CULTURE',
             title: 'MMCA Advisory Panel',
             role: '국립현대미술관 고객자문단 13기',
@@ -103,18 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
             image: 'images/gallery/logitech_mx_master4_leaderboard.png',
             alt: 'Logitech Ambassador 활동과 MX Master 4 체험 게임 리더보드',
             target: 'https://www.logitech.com/ko-kr'
-        },
-        bud: {
-            year: '2025—현재',
-            category: 'COMMUNITY',
-            title: 'BUD Community',
-            role: '커뮤니티 운영',
-            metric: '2025—',
-            metricLabel: '현재 활동 중',
-            summary: '게임을 좋아하는 사람들이 관계를 이어갈 수 있도록 BUD 커뮤니티를 운영하고 있습니다. 온라인 소통과 활동 기록을 통해 지속적인 만남의 기반을 만들고 있습니다.',
-            image: 'images/project_category_icons/BUD.jpg',
-            alt: 'BUD 커뮤니티 로고',
-            target: 'https://www.instagram.com/budwgame/'
         },
         dota: {
             year: '2025—현재',
@@ -194,13 +170,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const brandHero = document.querySelector('[data-brand-hero]');
     if (brandHero) {
         const brandItems = [
-            { name: 'Anti-V: Reboot', role: 'Game · PM', target: '#activity-map', activityKey: 'anti' },
+            { name: 'Cat Crunch Games', role: 'Game Studio', target: '#activity-map', activityKey: 'anti' },
             { name: 'GAME AiCON Seoul', role: 'B2B · Organizer', target: '#activity-map', activityKey: 'aicon' },
             { name: 'Logitech', role: 'Brand Experience', target: '#activity-map', activityKey: 'logitech' },
             { name: 'UNITE Seoul', role: 'Interactive Exhibition', target: '#activity-map', activityKey: 'logitech' },
             { name: 'Seoul Game Town 1·2', role: 'Exhibition', target: '#activity-map', activityKey: 'town2' },
             { name: 'MMCA Advisory', role: 'Culture', target: '#activity-map', activityKey: 'mmca' },
-            { name: 'BUD Community', role: 'Community', target: '#activity-map', activityKey: 'bud' },
             { name: 'Maple Camp', role: 'Award · 2025', target: '#awards' },
             { name: 'STOVE Crew', role: 'Creator Program', target: '#activity-map' }
         ];

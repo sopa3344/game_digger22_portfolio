@@ -125,7 +125,7 @@ figcaption { margin-top: 9px; color: var(--secondary); font-size: 11px; line-hei
 .section-label span { color: var(--secondary); font-size: 11px; }
 .section-title-row > p { max-width: 650px; margin: 0; font-size: 20px; line-height: 1.48; }
 .activity-timeline { margin-top: 66px; display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 14px; align-items: start; }
-.timeline-years { padding: 12px; display: grid; grid-template-rows: 28px repeat(11, minmax(0, 1fr)); gap: 3px; border-radius: var(--r-lg); background: var(--surface); }
+.timeline-years { padding: 12px; display: grid; grid-template-rows: 28px repeat(9, minmax(0, 1fr)); gap: 3px; border-radius: var(--r-lg); background: var(--surface); }
 .timeline-axis { display: grid; grid-template-columns: minmax(188px, .95fr) repeat(4, minmax(0, 1fr)); align-items: center; padding: 0 8px; color: var(--secondary); font-size: 9px; font-weight: 650; letter-spacing: .04em; }
 .timeline-axis span:not(:first-child) { text-align: center; }
 .timeline-activity { min-width: 0; min-height: 0; padding: 3px 8px; display: grid; grid-template-columns: minmax(188px, .95fr) minmax(0, 4fr); align-items: center; border: 0; border-radius: 11px; background: transparent; color: var(--ink); text-align: left; cursor: pointer; transition: color .2s ease, background .2s ease, box-shadow .25s ease; }
