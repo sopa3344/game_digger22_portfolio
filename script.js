@@ -163,13 +163,14 @@ document.addEventListener('DOMContentLoaded', function () {
             window.clearTimeout(transitionTimer);
 
             slides.forEach(function (slide) {
-                if (slide !== previousSlide && slide !== nextSlide) slide.classList.remove('is-active', 'is-exiting');
+                if (slide !== previousSlide && slide !== nextSlide) slide.classList.remove('is-active', 'is-entering', 'is-exiting');
             });
 
             if (animate && previousSlide !== nextSlide) {
                 previousSlide.classList.remove('is-active');
                 previousSlide.classList.add('is-exiting');
                 nextSlide.classList.remove('is-active', 'is-exiting');
+                nextSlide.classList.add('is-entering');
                 void nextSlide.offsetHeight;
                 nextSlide.classList.add('is-active');
                 brandLink.classList.remove('is-switching');
@@ -177,10 +178,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 brandLink.classList.add('is-switching');
                 transitionTimer = window.setTimeout(function () {
                     previousSlide.classList.remove('is-exiting');
+                    nextSlide.classList.remove('is-entering');
                     brandLink.classList.remove('is-switching');
                 }, 460);
             } else {
-                slides.forEach(function (slide) { slide.classList.remove('is-active', 'is-exiting'); });
+                slides.forEach(function (slide) { slide.classList.remove('is-active', 'is-entering', 'is-exiting'); });
                 nextSlide.classList.add('is-active');
             }
 
