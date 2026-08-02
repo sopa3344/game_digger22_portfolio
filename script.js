@@ -12,81 +12,89 @@ document.addEventListener('DOMContentLoaded', function () {
             year: '2024',
             category: 'GAME · PM',
             title: 'Anti-V: Reboot',
-            metric: '1→TEAM',
-            metricLabel: '1인 개발에서 팀으로 성장',
-            summary: '좋아하는 게임을 직접 만들며 기획의 출발점을 만들었습니다.',
+            role: 'PM · 기획·사업 총괄',
+            metric: '1·2위',
+            metricLabel: 'STOVE 주간 게임',
+            summary: '좋아하는 게임을 아이디어에 머물게 하지 않기 위해 직접 만들었습니다. 퍼즐 액션의 기획 구조와 사업 방향, 개발 일정과 전시 준비를 연결했습니다.',
             image: 'images/gallery/antiv_1.png',
             alt: 'Anti-V: Reboot 게임 플레이 화면',
-            target: '#anti-v'
+            target: 'https://youtu.be/nxKyHyCmoQI?si=X5nl69MnRYazcXUD'
         },
         huddlers: {
             year: '2025',
             category: 'COMMUNITY',
             title: 'Game Huddlers',
-            metric: '300',
+            role: '커뮤니티 설립·운영',
+            metric: '300명',
             metricLabel: '게임 개발자 커뮤니티 멤버',
-            summary: '게임을 좋아하는 사람들이 계속 만날 수 있는 커뮤니티를 만들었습니다.',
+            summary: '한 번의 만남이 계속 이어지도록 게임 개발자 Discord 커뮤니티를 만들었습니다. 유타대학교와 협업해 연 3회 오프라인 행사를 운영합니다.',
             image: 'images/gallery/me.jpeg',
             alt: 'Game Huddlers 커뮤니티 발표 현장',
-            target: '#game-huddlers'
+            target: 'https://discord.gg/jK9aqhKdnC'
         },
         town1: {
             year: '2025',
             category: 'EXHIBITION',
             title: 'Seoul Game Town 1',
+            role: '공동 기획·운영',
             metric: '565%',
             metricLabel: '크라우드 펀딩 달성률',
-            summary: '게임과 관객이 만나는 오프라인 자리를 직접 기획하고 운영했습니다.',
+            summary: '심사와 장르의 경계 없이 창작자가 관객을 만나는 인디게임 전시를 공동 기획했습니다. 좋아하는 게임들이 존중받는 첫 번째 오프라인 자리를 만들었습니다.',
             image: 'images/gallery/seoulgametown_1.jpeg',
             alt: '서울게임타운 1 전시 현장',
-            target: '#exhibition'
+            target: 'https://tumblbug.com/seoulgametown'
         },
         logitech: {
             year: '2026',
             category: 'BRAND EXPERIENCE',
             title: 'Logitech × UNITE Seoul',
+            role: '기획·개발·부스 운영',
             metric: '800+',
             metricLabel: '현장 체험 게임 플레이',
-            summary: '게임의 언어로 제품 기능을 누구나 참여할 수 있는 경험으로 바꿨습니다.',
+            summary: 'MX Master 4의 Actions Ring을 자연스럽게 이해하도록 30초 체험 게임을 직접 기획·개발했습니다. 게임의 언어로 제품 기능을 참여 가능한 경험으로 번역했습니다.',
             image: 'images/gallery/logitech_mx_master4_gameplay.png',
             alt: 'MX Master 4 Actions Ring 체험 게임 화면',
-            target: '#logitech'
+            target: 'https://mx-master-4-master-reveal-seoul.game-digger22.chatgpt.site/'
         },
         town2: {
             year: '2026',
             category: 'EXHIBITION',
             title: 'Seoul Game Town 2',
+            role: '공동 기획·운영',
             metric: '488%',
             metricLabel: '크라우드 펀딩 달성률',
-            summary: '전시를 판교로 확장하며 창작자와 관객의 두 번째 만남을 만들었습니다.',
+            summary: '첫 전시의 경험을 판교로 확장해 창작자와 관객의 두 번째 만남을 만들었습니다. 두 번의 행사를 통해 누적 1,810만 원 이상의 펀딩을 달성했습니다.',
             image: 'images/gallery/seoulgametowin_2.jpeg',
             alt: '서울게임타운 2 전시 현장',
-            target: '#exhibition'
+            target: 'https://tumblbug.com/seoulgametown2'
         },
         aicon: {
             year: '2025',
             category: 'GLOBAL B2B',
             title: 'GAME AiCON Seoul',
-            metric: '2025',
-            metricLabel: '서울에서 열린 글로벌 게임 행사',
-            summary: '게임 산업의 서로 다른 역할이 서울에서 만나는 장면을 기획했습니다.',
+            role: '행사 기획·운영',
+            metric: 'B2B',
+            metricLabel: '글로벌 게임 네트워킹',
+            summary: '글로벌 퍼블리셔, 개발사, 투자자와 인디 스튜디오가 연결되는 자리를 직접 기획하고 운영했습니다. 게임을 만드는 사람들의 만남을 설계했습니다.',
             image: 'images/gallery/aicone_1.jpeg',
             alt: 'GAME AiCON Seoul 행사 현장',
-            target: '#game-aicon'
+            target: 'https://www.gameaicon.com'
         },
         mmca: {
             year: '2026',
             category: 'CULTURE',
             title: 'MMCA Advisory Panel',
+            role: '국립현대미술관 고객자문단 13기',
             metric: '13TH',
             metricLabel: '국립현대미술관 고객자문단',
-            summary: '게임에서 익힌 경험 설계의 관점을 관람객과 미술관으로 확장했습니다.',
+            summary: '《데이미언 허스트》와 《방혜자》 전시의 이동, 안내, 몰입과 쾌적도를 분석했습니다. 게임에서 익힌 경험 설계를 관람객과 미술관으로 확장해 개선안을 제안했습니다.',
             image: 'images/gallery/mmca_advisory_session.jpg',
             alt: '국립현대미술관 고객자문단 활동 현장',
-            target: '#mmca'
+            target: 'https://www.mmca.go.kr/'
         }
     };
 
+    let selectTimelineActivity = null;
     if (timeline) {
         const activityButtons = timeline.querySelectorAll('[data-activity-key]');
         const timelineLink = timeline.querySelector('[data-timeline-link]');
@@ -96,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const timelineMetric = timeline.querySelector('[data-timeline-metric]');
         const timelineMetricLabel = timeline.querySelector('[data-timeline-metric-label]');
         const timelineTitle = timeline.querySelector('[data-timeline-title]');
+        const timelineRole = timeline.querySelector('[data-timeline-role]');
         const timelineSummary = timeline.querySelector('[data-timeline-summary]');
         let activityTransitionTimer = null;
 
@@ -117,11 +126,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 timelineMetric.textContent = activity.metric;
                 timelineMetricLabel.textContent = activity.metricLabel;
                 timelineTitle.textContent = activity.title;
+                timelineRole.textContent = activity.role;
                 timelineSummary.textContent = activity.summary;
                 timelineLink.href = activity.target;
                 timeline.classList.remove('is-changing');
             }, 110);
         }
+        selectTimelineActivity = showActivity;
 
         activityButtons.forEach(function (button) {
             ['mouseenter', 'focus', 'click'].forEach(function (eventName) {
@@ -135,12 +146,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const brandHero = document.querySelector('[data-brand-hero]');
     if (brandHero) {
         const brandItems = [
-            { name: 'Anti-V: Reboot', role: 'Game · PM', target: '#anti-v' },
-            { name: 'GAME AiCON Seoul', role: 'B2B · Organizer', target: '#game-aicon' },
-            { name: 'Logitech', role: 'Brand Experience', target: '#logitech' },
-            { name: 'UNITE Seoul', role: 'Interactive Exhibition', target: '#logitech' },
-            { name: 'Seoul Game Town 1·2', role: 'Exhibition', target: '#exhibition' },
-            { name: 'MMCA Advisory', role: 'Culture', target: '#mmca' },
+            { name: 'Anti-V: Reboot', role: 'Game · PM', target: '#activity-map', activityKey: 'anti' },
+            { name: 'GAME AiCON Seoul', role: 'B2B · Organizer', target: '#activity-map', activityKey: 'aicon' },
+            { name: 'Logitech', role: 'Brand Experience', target: '#activity-map', activityKey: 'logitech' },
+            { name: 'UNITE Seoul', role: 'Interactive Exhibition', target: '#activity-map', activityKey: 'logitech' },
+            { name: 'Seoul Game Town 1·2', role: 'Exhibition', target: '#activity-map', activityKey: 'town2' },
+            { name: 'MMCA Advisory', role: 'Culture', target: '#activity-map', activityKey: 'mmca' },
             { name: 'BUD Community', role: 'Community', target: '#archive' },
             { name: 'Maple Camp', role: 'Award · 2025', target: '#awards' },
             { name: 'STOVE Crew', role: 'Creator Program', target: '#archive' }
@@ -209,6 +220,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 showBrandItem(activeIndex + (event.key === 'ArrowRight' ? 1 : -1), true);
                 startAutoplay();
             }
+        });
+        brandLink.addEventListener('click', function () {
+            const item = brandItems[activeIndex];
+            if (item.activityKey && selectTimelineActivity) selectTimelineActivity(item.activityKey);
         });
         reducedMotion.addEventListener('change', startAutoplay);
 
