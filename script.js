@@ -50,11 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
             metric: '800+',
             metricLabel: '현장 체험 게임 플레이',
             summary: 'MX Master 4의 Actions Ring을 자연스럽게 이해하도록 30초 체험 게임을 직접 기획·개발했습니다. 게임의 언어로 제품 기능을 참여 가능한 경험으로 번역했습니다.',
-            image: 'images/gallery/logitech_mx_master4_gameplay.png',
-            alt: 'MX Master 4 Actions Ring 체험 게임 화면',
+            image: 'images/gallery/logitech-unite-presenter.webp',
+            alt: 'Logitech × UNITE Seoul 현장에서 MX 제품을 소개하는 장은태',
             images: [
-                { src: 'images/gallery/logitech_mx_master4_gameplay.png', alt: 'MX Master 4 Actions Ring 체험 게임 화면' },
-                { src: 'images/gallery/logitech_mx_master4_leaderboard.png', alt: 'MX Master 4 체험 게임 리더보드' }
+                { src: 'images/gallery/logitech-unite-presenter.webp', alt: 'Logitech × UNITE Seoul 현장에서 MX 제품을 소개하는 장은태' },
+                { src: 'images/gallery/logitech-unite-venue.webp', alt: 'UNITE Seoul 행사장과 Logitech 체험 부스 전경' },
+                { src: 'images/gallery/logitech-unite-playtest.webp', alt: '관람객이 MX Master 4 Actions Ring 체험 게임을 플레이하는 모습' }
             ],
             target: 'https://mx-master-4-master-reveal-seoul.game-digger22.chatgpt.site/'
         },

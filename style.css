@@ -189,6 +189,7 @@ figcaption { margin-top: 9px; color: var(--secondary); font-size: 11px; line-hei
 .project-lead-media img[data-auto-slideshow] { transition: opacity .18s ease; }
 .project-lead-media img[data-auto-slideshow].is-slide-changing { opacity: .18; }
 .project-lead-media-contain img { object-fit: contain; background: #f2f2f4; }
+.logitech-lead img { object-position: center 38%; }
 .project-lead-media figcaption, .project-support-media figcaption { margin-top: 7px; color: var(--secondary); font-size: 9px; line-height: 1.4; }
 .project-evidence { margin-top: 18px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .project-evidence > div { min-height: 164px; padding: 21px 22px; display: flex; flex-direction: column; border-radius: 20px; background: var(--bg); }
@@ -198,6 +199,7 @@ figcaption { margin-top: 9px; color: var(--secondary); font-size: 11px; line-hei
 .project-support-media { margin: 14px 0 0; }
 .project-support-media img { width: 100%; aspect-ratio: 16/9; display: block; object-fit: cover; border-radius: var(--r-md); background: var(--bg); }
 .project-support-media-contain img { object-fit: contain; }
+.logitech-support-gallery img { aspect-ratio: 3 / 4; }
 .project-more { margin-top: 14px; border-top: 1px solid var(--line); }
 .project-more summary { min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--secondary); font-size: 12px; font-weight: 600; cursor: pointer; list-style: none; }
 .project-more summary::-webkit-details-marker { display: none; }
