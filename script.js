@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const timeline = document.querySelector('[data-activity-timeline]');
     const activityData = {
         anti: {
-            year: '2024',
+            year: '2024—현재',
             category: 'GAME · PM',
             title: 'Anti-V: Reboot',
             role: 'PM · 기획·사업 총괄',
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             target: 'https://youtu.be/nxKyHyCmoQI?si=X5nl69MnRYazcXUD'
         },
         huddlers: {
-            year: '2025',
+            year: '2025—현재',
             category: 'COMMUNITY',
             title: 'Game Huddlers',
             role: '커뮤니티 설립·운영',
