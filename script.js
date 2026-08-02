@@ -91,6 +91,54 @@ document.addEventListener('DOMContentLoaded', function () {
             image: 'images/gallery/mmca_advisory_session.jpg',
             alt: '국립현대미술관 고객자문단 활동 현장',
             target: 'https://www.mmca.go.kr/'
+        },
+        ambassador: {
+            year: '2026—현재',
+            category: 'AMBASSADOR',
+            title: 'Logitech Ambassador',
+            role: '콘텐츠 제작·현장 운영',
+            metric: '2026—',
+            metricLabel: '현재 활동 중',
+            summary: '게임과 디지털 창작자의 관점으로 Logitech 제품과 경험을 소개합니다. 콘텐츠 제작과 현장 활동을 통해 브랜드와 사용자 사이의 접점을 넓히고 있습니다.',
+            image: 'images/gallery/logitech_mx_master4_leaderboard.png',
+            alt: 'Logitech Ambassador 활동과 MX Master 4 체험 게임 리더보드',
+            target: 'https://www.logitech.com/ko-kr'
+        },
+        bud: {
+            year: '2025—현재',
+            category: 'COMMUNITY',
+            title: 'BUD Community',
+            role: '커뮤니티 운영',
+            metric: '2025—',
+            metricLabel: '현재 활동 중',
+            summary: '게임을 좋아하는 사람들이 관계를 이어갈 수 있도록 BUD 커뮤니티를 운영하고 있습니다. 온라인 소통과 활동 기록을 통해 지속적인 만남의 기반을 만들고 있습니다.',
+            image: 'images/project_category_icons/BUD.jpg',
+            alt: 'BUD 커뮤니티 로고',
+            target: 'https://www.instagram.com/budwgame/'
+        },
+        dota: {
+            year: '2025—현재',
+            category: 'COMMUNITY EVENT',
+            title: 'Dota 2 Korea Viewing Party',
+            role: '행사 기획·운영',
+            metric: '2025—',
+            metricLabel: '현재 활동 중',
+            summary: 'Dota 2를 좋아하는 사람들이 함께 경기를 보고 교류하는 국내 오프라인 뷰잉 파티를 기획·운영하고 있습니다. 게임을 중심으로 팬들의 만남을 실제 공간으로 확장했습니다.',
+            image: 'images/gallery/dota2_viewing_party.png',
+            alt: 'Dota 2 Korea Viewing Party 현장',
+            target: 'https://www.youtube.com/watch?v=t-WpQNAKYL8'
+        },
+        instagram: {
+            year: '2024—현재',
+            category: 'GAME MEDIA',
+            title: 'Instagram @game_digger22',
+            role: '게임 콘텐츠·활동 기록',
+            metric: '1,200+',
+            metricLabel: 'Instagram Followers',
+            summary: '게임 개발, 행사와 커뮤니티 활동을 기록하며 game_digger22의 관점을 꾸준히 공유하고 있습니다. 프로젝트의 결과뿐 아니라 만드는 과정과 현장의 사람들을 연결합니다.',
+            image: 'images/gamedigger22_logo.png',
+            alt: 'game_digger22 로고',
+            target: 'https://www.instagram.com/game_digger22/'
         }
     };
 
@@ -152,9 +200,9 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: 'UNITE Seoul', role: 'Interactive Exhibition', target: '#activity-map', activityKey: 'logitech' },
             { name: 'Seoul Game Town 1·2', role: 'Exhibition', target: '#activity-map', activityKey: 'town2' },
             { name: 'MMCA Advisory', role: 'Culture', target: '#activity-map', activityKey: 'mmca' },
-            { name: 'BUD Community', role: 'Community', target: '#archive' },
+            { name: 'BUD Community', role: 'Community', target: '#activity-map', activityKey: 'bud' },
             { name: 'Maple Camp', role: 'Award · 2025', target: '#awards' },
-            { name: 'STOVE Crew', role: 'Creator Program', target: '#archive' }
+            { name: 'STOVE Crew', role: 'Creator Program', target: '#activity-map' }
         ];
         const slides = Array.from(brandHero.querySelectorAll('[data-brand-slide]'));
         const brandLink = brandHero.querySelector('[data-brand-link]');
