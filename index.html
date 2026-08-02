@@ -20,8 +20,8 @@
     </a>
     <nav aria-label="주요 메뉴">
       <a href="#about">About</a>
-      <a href="#activity-index">Timeline</a>
-      <a href="#selected-work">Projects</a>
+      <a href="#activity-map">Activities</a>
+      <a href="#selected-work">Works</a>
       <a href="#press">Press</a>
       <a class="nav-cta" href="#contact">Contact</a>
     </nav>
@@ -29,90 +29,33 @@
 
   <main id="main">
     <section class="cover" id="cover" aria-labelledby="hero-title">
-      <header class="cover-brand">
-        <div>
-          <p class="brand-overline">PORTFOLIO · 2024—2026</p>
-          <h1 class="brand-wordmark" id="hero-title">game_digger22</h1>
-        </div>
-        <div class="cover-brand-copy">
-          <strong>게임을 만들고, 사람과 연결합니다.</strong>
-          <p>게임 개발과 전시, 브랜드 경험과 커뮤니티를 연결하는 Game PM 장은태입니다.</p>
-        </div>
-      </header>
-
-      <section class="activity-index" id="activity-index" aria-labelledby="activity-index-title">
-        <header class="activity-index-header">
-          <div>
-            <span>_ ACTIVITY INDEX</span>
-            <h2 id="activity-index-title">내가 만든 연결들</h2>
-          </div>
-          <p>연도별 로고를 선택해 대표 장면과 핵심 성과를 확인하세요.</p>
-        </header>
-
-        <div class="activity-timeline" data-activity-timeline>
-          <div class="timeline-years" aria-label="2026년부터 2024년까지 최신순으로 정리한 대표 활동">
-            <section class="timeline-year-group" aria-labelledby="timeline-2026">
-              <header><strong id="timeline-2026">2026</strong><span>Connection</span></header>
-              <div class="timeline-activities">
-                <button class="timeline-activity is-active" type="button" data-activity-key="logitech" aria-pressed="true">
-                  <span class="timeline-logo logo-wide"><img src="images/project_category_icons/logitech.png" alt=""></span>
-                  <span><strong>Logitech × UNITE</strong><small>Brand Experience</small></span>
-                </button>
-                <button class="timeline-activity" type="button" data-activity-key="town2" aria-pressed="false">
-                  <span class="timeline-logo logo-badge"><img src="images/project_category_icons/seoulgametown.jpeg" alt=""></span>
-                  <span><strong>Seoul Game Town 2</strong><small>Exhibition</small></span>
-                </button>
-                <button class="timeline-activity" type="button" data-activity-key="mmca" aria-pressed="false">
-                  <span class="timeline-logo"><img src="images/logos-clean/mmca.png" alt=""></span>
-                  <span><strong>MMCA Advisory</strong><small>Culture</small></span>
-                </button>
-              </div>
-            </section>
-
-            <section class="timeline-year-group" aria-labelledby="timeline-2025">
-              <header><strong id="timeline-2025">2025</strong><span>Expansion</span></header>
-              <div class="timeline-activities">
-                <button class="timeline-activity" type="button" data-activity-key="town1" aria-pressed="false">
-                  <span class="timeline-logo logo-badge"><img src="images/project_category_icons/seoulgametown.jpeg" alt=""></span>
-                  <span><strong>Seoul Game Town 1</strong><small>Exhibition</small></span>
-                </button>
-                <button class="timeline-activity" type="button" data-activity-key="huddlers" aria-pressed="false">
-                  <span class="timeline-logo logo-pixel"><img src="images/activity_images/cathand_32x32_500.png" alt=""></span>
-                  <span><strong>Game Huddlers</strong><small>Community</small></span>
-                </button>
-                <button class="timeline-activity" type="button" data-activity-key="aicon" aria-pressed="false">
-                  <span class="timeline-logo logo-badge"><img src="images/project_category_icons/gameaicon.jpeg" alt=""></span>
-                  <span><strong>GAME AiCON</strong><small>B2B · Organizer</small></span>
-                </button>
-              </div>
-            </section>
-
-            <section class="timeline-year-group" aria-labelledby="timeline-2024">
-              <header><strong id="timeline-2024">2024</strong><span>Starting Point</span></header>
-              <div class="timeline-activities">
-                <button class="timeline-activity" type="button" data-activity-key="anti" aria-pressed="false">
-                  <span class="timeline-logo logo-badge"><img src="images/project_category_icons/antiv.png" alt=""></span>
-                  <span><strong>Anti-V: Reboot</strong><small>Game PM</small></span>
-                </button>
-              </div>
-            </section>
-          </div>
-
-          <a class="timeline-preview" href="#logitech" data-timeline-link aria-live="polite">
-            <img class="timeline-preview-image" src="images/gallery/logitech_mx_master4_gameplay.png" alt="MX Master 4 Actions Ring 체험 게임 화면" data-timeline-image style="--preview-scale: 1.3; object-position: 70% center" decoding="async">
-            <span class="timeline-preview-shade"></span>
-            <span class="timeline-preview-content">
-              <span class="timeline-preview-meta"><span data-timeline-year>2026</span><span data-timeline-category>BRAND EXPERIENCE</span></span>
-              <span class="timeline-metric"><strong data-timeline-metric>800+</strong><small data-timeline-metric-label>현장 체험 게임 플레이</small></span>
-              <span class="timeline-preview-copy">
-                <strong data-timeline-title>Logitech × UNITE Seoul</strong>
-                <span data-timeline-summary>MX Master 4의 기능을 30초의 직관적인 플레이로 번역했습니다.</span>
-              </span>
-              <span class="timeline-preview-action">프로젝트 보기 <b>↗</b></span>
-            </span>
+      <div class="brand-hero" data-brand-hero>
+        <h1 class="brand-wordmark" id="hero-title">
+          <span class="brand-wordmark-prefix">game</span>
+          <a class="brand-logo-stage" href="#anti-v" data-brand-link aria-label="Anti-V: Reboot 활동 보기">
+            <img class="brand-logo-item brand-logo-badge is-active" src="images/project_category_icons/antiv.png" alt="" data-brand-logo>
+            <img class="brand-logo-item brand-logo-badge" src="images/project_category_icons/gameaicon.jpeg" alt="" data-brand-logo>
+            <img class="brand-logo-item" src="images/project_category_icons/logitech.png" alt="" data-brand-logo>
+            <img class="brand-logo-item" src="images/project_category_icons/unite-seoul.png" alt="" data-brand-logo>
+            <img class="brand-logo-item brand-logo-badge" src="images/project_category_icons/seoulgametown.jpeg" alt="" data-brand-logo>
+            <img class="brand-logo-item" src="images/logos-clean/mmca.png" alt="" data-brand-logo>
+            <img class="brand-logo-item brand-logo-badge" src="images/logos-clean/bud.png" alt="" data-brand-logo>
+            <img class="brand-logo-item" src="images/logos-clean/maple-camp.png" alt="" data-brand-logo>
+            <img class="brand-logo-item" src="images/activity_images/STOVE CREW 컬러1 2025.png" alt="" data-brand-logo>
           </a>
+          <span class="brand-wordmark-suffix">digger22</span>
+        </h1>
+
+        <div class="brand-activity-bar">
+          <div class="brand-active-project" aria-live="polite">
+            <strong data-brand-name>Anti-V: Reboot</strong><small data-brand-role>Game · PM</small>
+          </div>
         </div>
-      </section>
+
+        <div class="brand-signature">
+          <p class="brand-mission">게임을 만들고, 사람과 연결합니다.</p>
+        </div>
+      </div>
     </section>
 
     <section class="intro" id="about" aria-labelledby="about-title">
@@ -134,6 +77,86 @@
         <a href="#exhibition"><span>2)</span><strong>게임이 관객을 만난다</strong><em>Games Meet People</em></a>
         <a href="#logitech"><span>3)</span><strong>기능이 플레이가 된다</strong><em>Functions Become Play</em></a>
         <a href="#community"><span>4)</span><strong>경험이 공동체로 이어진다</strong><em>Experience Becomes Community</em></a>
+      </div>
+    </section>
+
+    <section class="map-section" id="activity-map">
+      <div class="section-title-row">
+        <div class="section-label">
+          <strong>연도별 활동</strong>
+          <span>Activity Timeline</span>
+        </div>
+        <p>연도별 대표 로고를 선택하면 프로젝트의 장면과 핵심 성과를 확인할 수 있습니다.</p>
+      </div>
+
+      <div class="activity-timeline" data-activity-timeline>
+        <div class="timeline-years" aria-label="2026년부터 2024년까지 최신순으로 정리한 대표 활동">
+          <section class="timeline-year-group" aria-labelledby="timeline-2026">
+            <header><strong id="timeline-2026">2026</strong><span>Connection</span></header>
+            <div class="timeline-activities">
+              <button class="timeline-activity is-active" type="button" data-activity-key="logitech" aria-pressed="true">
+                <span class="timeline-logo logo-wide"><img src="images/project_category_icons/logitech.png" alt=""></span>
+                <span><strong>Logitech × UNITE</strong><small>Brand Experience</small></span>
+              </button>
+              <button class="timeline-activity" type="button" data-activity-key="town2" aria-pressed="false">
+                <span class="timeline-logo logo-badge"><img src="images/project_category_icons/seoulgametown.jpeg" alt=""></span>
+                <span><strong>Seoul Game Town 2</strong><small>Exhibition</small></span>
+              </button>
+              <button class="timeline-activity" type="button" data-activity-key="mmca" aria-pressed="false">
+                <span class="timeline-logo"><img src="images/logos-clean/mmca.png" alt=""></span>
+                <span><strong>MMCA Advisory</strong><small>Culture</small></span>
+              </button>
+            </div>
+          </section>
+
+          <section class="timeline-year-group" aria-labelledby="timeline-2025">
+            <header><strong id="timeline-2025">2025</strong><span>Expansion</span></header>
+            <div class="timeline-activities">
+              <button class="timeline-activity" type="button" data-activity-key="town1" aria-pressed="false">
+                <span class="timeline-logo logo-badge"><img src="images/project_category_icons/seoulgametown.jpeg" alt=""></span>
+                <span><strong>Seoul Game Town 1</strong><small>Exhibition</small></span>
+              </button>
+              <button class="timeline-activity" type="button" data-activity-key="huddlers" aria-pressed="false">
+                <span class="timeline-logo logo-pixel"><img src="images/activity_images/cathand_32x32_500.png" alt=""></span>
+                <span><strong>Game Huddlers</strong><small>Community</small></span>
+              </button>
+              <button class="timeline-activity" type="button" data-activity-key="aicon" aria-pressed="false">
+                <span class="timeline-logo logo-badge"><img src="images/project_category_icons/gameaicon.jpeg" alt=""></span>
+                <span><strong>GAME AiCON</strong><small>B2B · Organizer</small></span>
+              </button>
+            </div>
+          </section>
+
+          <section class="timeline-year-group" aria-labelledby="timeline-2024">
+            <header><strong id="timeline-2024">2024</strong><span>Starting Point</span></header>
+            <div class="timeline-activities">
+              <button class="timeline-activity" type="button" data-activity-key="anti" aria-pressed="false">
+                <span class="timeline-logo logo-badge"><img src="images/project_category_icons/antiv.png" alt=""></span>
+                <span><strong>Anti-V: Reboot</strong><small>Game PM</small></span>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <a class="timeline-preview" href="#logitech" data-timeline-link aria-live="polite">
+          <img class="timeline-preview-image" src="images/gallery/logitech_mx_master4_gameplay.png" alt="MX Master 4 Actions Ring 체험 게임 화면" data-timeline-image loading="lazy" decoding="async">
+          <span class="timeline-preview-shade"></span>
+          <span class="timeline-preview-content">
+            <span class="timeline-preview-meta"><span data-timeline-year>2026</span><span data-timeline-category>BRAND EXPERIENCE</span></span>
+            <span class="timeline-metric"><strong data-timeline-metric>800+</strong><small data-timeline-metric-label>현장 체험 게임 플레이</small></span>
+            <span class="timeline-preview-copy">
+              <strong data-timeline-title>Logitech × UNITE Seoul</strong>
+              <span data-timeline-summary>MX Master 4의 기능을 30초의 직관적인 플레이로 번역했습니다.</span>
+            </span>
+            <span class="timeline-preview-action">상세 활동 보기 <b>↗</b></span>
+          </span>
+        </a>
+      </div>
+
+      <div class="timeline-caption">
+        <span>2024—2026</span>
+        <p>로고에 마우스를 올리거나 선택해 대표 이미지와 성과를 확인하세요.</p>
+        <span>7 PROJECTS</span>
       </div>
     </section>
 
