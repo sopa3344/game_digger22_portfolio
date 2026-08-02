@@ -100,21 +100,16 @@ dd { margin: 0; }
 .brand-logo-slide.is-active { z-index: 2; opacity: 1; transform: translateY(0); }
 .brand-logo-slide.is-exiting { z-index: 1; animation: brandLogoExit .42s var(--ease-spring) forwards; }
 .brand-logo-item { width: 100%; height: 100%; min-height: 0; display: block; object-fit: contain; object-position: center bottom; filter: saturate(.96); }
-.brand-hero.is-booting .brand-logo-slide, .brand-hero.is-booting .brand-activity-bar { visibility: hidden; opacity: 0; }
+.brand-hero.is-booting .brand-logo-slide { visibility: hidden; opacity: 0; }
 .brand-hero.is-booting .brand-logo-line { animation: brandCursorBlink .58s steps(1, end) infinite; }
 .brand-logo-stage.is-switching .brand-logo-line { animation: brandCursorBlink .18s steps(1, end) 4; }
 @keyframes brandCursorBlink { 0%, 46% { opacity: 1; } 47%, 100% { opacity: 0; } }
 @keyframes brandLogoExit { 0% { opacity: 1; transform: translateY(0); } 52% { opacity: .28; } 100% { opacity: 0; transform: translateY(-72%); } }
-.brand-activity-bar { margin-top: 20px; }
-.brand-active-project { min-width: 0; display: flex; align-items: baseline; gap: 9px; }
-.brand-active-project strong { font-size: 12px; }
-.brand-active-project small { color: var(--secondary); font-size: 10px; }
 .brand-signature { margin-top: clamp(56px, 9vh, 96px); }
 .brand-mission { margin: 0; font-size: clamp(25px, 2.6vw, 36px); font-weight: 620; line-height: 1.08; letter-spacing: -.045em; }
 
 .intro { margin-top: 44px; padding-top: 150px; padding-bottom: 170px; display: grid; grid-template-columns: .72fr 1.28fr; gap: 32px; border-radius: var(--r-lg); background: var(--surface); }
-.section-index { margin: 0; color: var(--secondary); font-size: 12px; }
-.intro-statement h2 { margin: 24px 0 0; font-size: clamp(30px, 3.2vw, 44px); line-height: 1.06; letter-spacing: -.05em; }
+.intro-statement h2 { margin: 0; font-size: clamp(30px, 3.2vw, 44px); line-height: 1.06; letter-spacing: -.05em; }
 .intro-essay { max-width: 690px; }
 .intro-essay p { margin: 0 0 28px; font-size: clamp(18px, 2vw, 24px); line-height: 1.48; letter-spacing: -.032em; }
 .intro-essay .lead { font-weight: 620; }
@@ -239,7 +234,7 @@ footer { width: 100%; padding: 21px max(var(--pad), calc((100vw - var(--content)
   .site-brand img { width: 27px; height: 27px; }.site-brand strong { font-size: 12px; }.site-brand small { display: none; }
   .site-header nav { gap: 2px; font-size: 12px; }.site-header nav a:nth-child(1), .site-header nav a:nth-child(3), .site-header nav a:nth-child(4) { display: none; }.site-header nav a { padding-inline: 11px; }.site-header .nav-cta { padding-inline: 15px; }
   .cover { min-height: auto; padding-top: calc(var(--header-h) + 52px); padding-bottom: 26px; }
-  .brand-hero { min-height: auto; justify-content: flex-start; }.brand-wordmark { width: 100%; grid-template-columns: auto 1.6em; justify-content: start; white-space: normal; line-height: .86; }.brand-wordmark-prefix { grid-column: 1; }.brand-logo-stage { grid-column: 2; width: 1.52em; height: 1.02em; margin: -.18em 0 0 .1em; }.brand-wordmark-suffix { grid-column: 1 / -1; }.brand-activity-bar { margin-top: 18px; }.brand-active-project { gap: 7px; }.brand-signature { margin-top: 52px; }.brand-mission { max-width: 330px; font-size: 29px; }
+  .brand-hero { min-height: auto; justify-content: flex-start; }.brand-wordmark { width: 100%; grid-template-columns: auto 1.6em; justify-content: start; white-space: normal; line-height: .86; }.brand-wordmark-prefix { grid-column: 1; }.brand-logo-stage { grid-column: 2; width: 1.52em; height: 1.02em; margin: -.18em 0 0 .1em; }.brand-wordmark-suffix { grid-column: 1 / -1; }.brand-signature { margin-top: 52px; }.brand-mission { max-width: 330px; font-size: 29px; }
   .intro, .section-title-row, .chapter-heading, .case-intro, .split-case { grid-template-columns: 1fr; }
   .intro { margin-top: 12px; padding-top: 72px; padding-bottom: 82px; }.intro-statement h2 { margin-bottom: 56px; }.intro-essay p { font-size: 18px; }.profile-figure, .principle-list { grid-column: 1; }.profile-figure { margin-top: 50px; grid-template-columns: 1fr; }.profile-figure img { max-width: none; }.profile-figure figcaption { justify-self: stretch; flex-direction: row; justify-content: space-between; text-align: left; }.principle-list { margin-top: 60px; grid-template-columns: 1fr; }.principle-list a { min-height: 96px; }
   .map-section, .archive, .awards, .press, .chapter { padding-top: 90px; padding-bottom: 100px; }.section-title-row > p { margin-top: 34px; font-size: 17px; }

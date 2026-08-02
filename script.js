@@ -147,8 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
         ];
         const slides = Array.from(brandHero.querySelectorAll('[data-brand-slide]'));
         const brandLink = brandHero.querySelector('[data-brand-link]');
-        const name = brandHero.querySelector('[data-brand-name]');
-        const role = brandHero.querySelector('[data-brand-role]');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         let activeIndex = 0;
         let autoplayTimer = null;
@@ -188,8 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             activeIndex = nextIndex;
             const item = brandItems[activeIndex];
-            name.textContent = item.name;
-            role.textContent = item.role;
             brandLink.href = item.target;
             brandLink.setAttribute('aria-label', item.name + ' 활동 보기');
         }
