@@ -94,7 +94,7 @@ dd { margin: 0; }
 .brand-wordmark { margin: 0; display: grid; grid-template-columns: auto 1.7em auto; align-items: center; justify-content: start; font-size: clamp(62px, 8.25vw, 126px); font-weight: 690; line-height: .82; letter-spacing: -.075em; white-space: nowrap; }
 .brand-logo-stage { position: relative; width: 1.62em; height: 1.05em; margin: -.18em .06em 0 .1em; overflow: hidden; display: block; color: var(--text); }
 .brand-logo-stage:hover, .brand-logo-stage:focus-visible { color: #000; }
-.brand-logo-line { position: absolute; right: 3%; bottom: .06em; left: 3%; z-index: 3; height: .055em; display: block; background: currentColor; transform-origin: center; }
+.brand-logo-line { position: absolute; bottom: .06em; left: 50%; z-index: 3; width: min(var(--brand-line-width, 52%), 90%); height: .055em; display: block; background: currentColor; transform: translateX(-50%); transform-origin: center; transition: width .42s var(--ease-spring); }
 .brand-logo-slide { position: absolute; top: 0; left: 5%; z-index: 1; width: 90%; height: calc(100% - .13em); display: block; opacity: 0; transform: translateY(72%); transition: opacity .2s ease, transform .42s var(--ease-spring); }
 .brand-logo-slide.is-active { z-index: 2; opacity: 1; transform: translateY(0); }
 .brand-logo-slide.is-exiting { z-index: 1; opacity: 0; transform: translateY(-72%); }
