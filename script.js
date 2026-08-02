@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: 'Anti-V: Reboot',
             metric: '1→TEAM',
             metricLabel: '1인 개발에서 팀으로 성장',
-            summary: '좋아하는 마음을 실제 플레이 경험으로 완성했습니다.',
+            summary: '좋아하는 게임을 직접 만들며 기획의 출발점을 만들었습니다.',
             image: 'images/gallery/antiv_1.png',
             alt: 'Anti-V: Reboot 게임 플레이 화면',
             target: '#anti-v'
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: 'Game Huddlers',
             metric: '300',
             metricLabel: '게임 개발자 커뮤니티 멤버',
-            summary: '유타대학교와 협업하며 개발자의 다음 프로젝트를 연결합니다.',
+            summary: '게임을 좋아하는 사람들이 계속 만날 수 있는 커뮤니티를 만들었습니다.',
             image: 'images/gallery/me.jpeg',
             alt: 'Game Huddlers 커뮤니티 발표 현장',
             target: '#game-huddlers'
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: 'Seoul Game Town 1',
             metric: '565%',
             metricLabel: '크라우드 펀딩 달성률',
-            summary: '심사와 장르의 경계 없이 모든 게임이 존중받는 전시를 열었습니다.',
+            summary: '게임과 관객이 만나는 오프라인 자리를 직접 기획하고 운영했습니다.',
             image: 'images/gallery/seoulgametown_1.jpeg',
             alt: '서울게임타운 1 전시 현장',
             target: '#exhibition'
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: 'Logitech × UNITE Seoul',
             metric: '800+',
             metricLabel: '현장 체험 게임 플레이',
-            summary: 'MX Master 4의 기능을 30초의 직관적인 플레이로 번역했습니다.',
+            summary: '게임의 언어로 제품 기능을 누구나 참여할 수 있는 경험으로 바꿨습니다.',
             image: 'images/gallery/logitech_mx_master4_gameplay.png',
             alt: 'MX Master 4 Actions Ring 체험 게임 화면',
             target: '#logitech'
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: 'Seoul Game Town 2',
             metric: '488%',
             metricLabel: '크라우드 펀딩 달성률',
-            summary: '두 번째 전시를 판교로 확장해 더 많은 창작자와 관객을 만났습니다.',
+            summary: '전시를 판교로 확장하며 창작자와 관객의 두 번째 만남을 만들었습니다.',
             image: 'images/gallery/seoulgametowin_2.jpeg',
             alt: '서울게임타운 2 전시 현장',
             target: '#exhibition'
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: 'GAME AiCON Seoul',
             metric: '2025',
             metricLabel: '서울에서 열린 글로벌 게임 행사',
-            summary: '개발사, 퍼블리셔, 투자자와 인디 스튜디오를 한자리에 연결했습니다.',
+            summary: '게임 산업의 서로 다른 역할이 서울에서 만나는 장면을 기획했습니다.',
             image: 'images/gallery/aicone_1.jpeg',
             alt: 'GAME AiCON Seoul 행사 현장',
             target: '#game-aicon'
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: 'MMCA Advisory Panel',
             metric: '13TH',
             metricLabel: '국립현대미술관 고객자문단',
-            summary: '관람객의 눈으로 미술관의 경험을 다시 보았습니다.',
+            summary: '게임에서 익힌 경험 설계의 관점을 관람객과 미술관으로 확장했습니다.',
             image: 'images/gallery/mmca_advisory_session.jpg',
             alt: '국립현대미술관 고객자문단 활동 현장',
             target: '#mmca'
