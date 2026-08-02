@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         town2: {
             year: '2025—현재',
             category: 'EXHIBITION',
-            title: 'Seoul Game Town 1·2',
+            title: 'Seoul Game Town',
             role: '공동 기획·운영',
             metric: '1,810만원',
             metricLabel: '텀블벅 펀딩 성공',
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: 'GAME AiCON Seoul', role: 'B2B · Organizer', target: '#activity-map', activityKey: 'aicon' },
             { name: 'Logitech', role: 'Brand Experience', target: '#activity-map', activityKey: 'logitech' },
             { name: 'UNITE Seoul', role: 'Interactive Exhibition', target: '#activity-map', activityKey: 'logitech' },
-            { name: 'Seoul Game Town 1·2', role: 'Exhibition', target: '#activity-map', activityKey: 'town2' },
+            { name: 'Seoul Game Town', role: 'Exhibition', target: '#activity-map', activityKey: 'town2' },
             { name: 'MMCA Advisory', role: 'Culture', target: '#activity-map', activityKey: 'mmca' }
         ];
         const slides = Array.from(brandHero.querySelectorAll('[data-brand-slide]'));

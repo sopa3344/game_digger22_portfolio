@@ -130,25 +130,27 @@ figcaption { margin-top: 9px; color: var(--secondary); font-size: 11px; line-hei
 .section-label strong { font-size: clamp(44px, 5.6vw, 76px); font-weight: 690; line-height: .9; letter-spacing: -.06em; white-space: nowrap; }
 .section-label span { color: var(--secondary); font-size: 11px; }
 .activity-timeline { margin-top: 66px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: start; }
-.activity-categories { height: 100%; padding: 18px 20px; overflow: hidden; display: grid; grid-template-rows: minmax(74px, .95fr) minmax(148px, 1.7fr) minmax(82px, 1.1fr) minmax(74px, .95fr); align-content: stretch; border-radius: var(--r-lg); background: var(--surface); }
-.activity-category { padding: 12px 0; display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 14px; align-items: center; border-top: 1px solid var(--line); }
+.activity-categories { height: 100%; padding: 18px 20px; overflow: hidden; display: grid; grid-template-rows: minmax(88px, .95fr) minmax(172px, 1.7fr) minmax(94px, 1.1fr) minmax(88px, .95fr); align-content: stretch; border-radius: var(--r-lg); background: var(--surface); }
+.activity-category { padding: 12px 0; display: grid; grid-template-columns: 118px minmax(0, 1fr); gap: 14px; align-items: center; border-top: 1px solid var(--line); }
 .activity-category:first-child { border-top: 0; }
-.activity-category header { align-self: center; display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 7px; color: var(--secondary); }
-.activity-category header > span { font-size: 10px; }
+.activity-category header { align-self: center; display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 8px; color: var(--secondary); }
+.activity-category header > span { font-size: 11px; }
 .activity-category header div { display: flex; flex-direction: column; }
-.activity-category header strong { color: var(--ink); font-size: 12px; letter-spacing: .035em; }
-.activity-category header small { margin-top: 4px; font-size: 10px; }
+.activity-category header strong { color: var(--ink); font-size: 14px; letter-spacing: .03em; }
+.activity-category header small { margin-top: 5px; font-size: 11px; }
 .activity-category-items { min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.activity-category:nth-child(2) .timeline-activity { min-height: 84px; }
+.activity-category:nth-child(2) .timeline-activity strong { -webkit-line-clamp: 3; }
 .category-single .timeline-activity { grid-column: 1 / -1; }
-.timeline-activity { min-width: 0; min-height: 64px; padding: 10px 11px; display: grid; grid-template-columns: minmax(0, 1fr) 16px; gap: 6px; align-items: center; border: 0; border-radius: 13px; background: transparent; color: var(--ink); text-align: left; cursor: pointer; transition: background .2s ease, box-shadow .2s ease; }
+.timeline-activity { min-width: 0; min-height: 76px; padding: 11px 12px; display: grid; grid-template-columns: minmax(0, 1fr) 16px; gap: 7px; align-items: center; border: 0; border-radius: 14px; background: transparent; color: var(--ink); text-align: left; cursor: pointer; transition: background .2s ease, box-shadow .2s ease; }
 .timeline-activity:hover { background: var(--bg); }
 .timeline-activity.is-active { background: #f1f1f3; box-shadow: inset 0 0 0 1px #d2d2d7; }
-.timeline-identity { min-width: 0; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 10px; align-items: center; }
+.timeline-identity { min-width: 0; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 12px; align-items: center; }
 .timeline-identity > span:last-child { min-width: 0; display: flex; flex-direction: column; }
-.timeline-activity strong { overflow: hidden; display: -webkit-box; font-size: 13px; line-height: 1.16; white-space: normal; text-overflow: clip; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-.timeline-activity small { margin-top: 3px; overflow: hidden; color: var(--secondary); font-size: 9.5px; font-weight: 550; line-height: 1.15; white-space: nowrap; text-overflow: ellipsis; }
+.timeline-activity strong { overflow: hidden; display: -webkit-box; font-size: 15px; line-height: 1.16; white-space: normal; text-overflow: clip; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.timeline-activity small { margin-top: 4px; overflow: hidden; color: var(--secondary); font-size: 11px; font-weight: 550; line-height: 1.15; white-space: nowrap; text-overflow: ellipsis; }
 .timeline-activity.is-active small { color: var(--secondary); }
-.timeline-logo { width: 40px; height: 40px; padding: 6px; display: grid; place-items: center; overflow: hidden; border-radius: 10px; background: #fff; }
+.timeline-logo { width: 52px; height: 52px; padding: 7px; display: grid; place-items: center; overflow: hidden; border-radius: 12px; background: #fff; }
 .timeline-logo img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
 .timeline-logo.logo-badge { padding: 0; }
 .timeline-logo.logo-badge img { object-fit: cover; mix-blend-mode: normal; }
@@ -366,14 +368,14 @@ footer { width: 100%; padding: 21px max(var(--pad), calc((100vw - var(--content)
   .activity-categories { height: auto; padding: 0; overflow: visible; gap: 10px; background: transparent; }
   .activity-category { padding: 16px; grid-template-columns: 1fr; gap: 13px; border: 0; border-radius: var(--r-md); background: var(--surface); }
   .activity-category header { padding-top: 0; grid-template-columns: 24px minmax(0, 1fr); }
-  .activity-category header strong { font-size: 12px; }
-  .activity-category header small { font-size: 10px; }
+  .activity-category header strong { font-size: 14px; }
+  .activity-category header small { font-size: 11px; }
   .activity-category-items { grid-template-columns: 1fr; }
-  .timeline-activity { min-height: 74px; padding: 11px; }
-  .timeline-identity { grid-template-columns: 48px minmax(0, 1fr); }
-  .timeline-logo { width: 48px; height: 48px; border-radius: 12px; }
-  .timeline-activity strong { font-size: 14px; }
-  .timeline-activity small { margin-top: 4px; font-size: 10px; }
+  .timeline-activity { min-height: 88px; padding: 12px; }
+  .timeline-identity { grid-template-columns: 56px minmax(0, 1fr); }
+  .timeline-logo { width: 56px; height: 56px; border-radius: 13px; }
+  .timeline-activity strong { font-size: 16px; }
+  .timeline-activity small { margin-top: 5px; font-size: 11px; }
   .timeline-preview { position: relative; top: auto; min-height: 520px; }
   .timeline-preview-content { min-height: 520px; padding: 22px; }
   .timeline-metric { margin-top: 32px; }
