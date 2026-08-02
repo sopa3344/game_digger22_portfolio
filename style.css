@@ -91,20 +91,17 @@ dt { color: var(--secondary); }
 dd { margin: 0; }
 
 .brand-hero { flex: 1; min-height: calc(100svh - var(--header-h) - clamp(90px, 12vh, 150px)); display: flex; flex-direction: column; justify-content: center; }
-.brand-wordmark { margin: 0; display: grid; grid-template-columns: auto 2.28em auto; align-items: center; justify-content: start; font-size: clamp(62px, 8.25vw, 126px); font-weight: 690; line-height: .82; letter-spacing: -.075em; white-space: nowrap; }
-.brand-logo-stage { position: relative; width: 2.2em; height: 1.68em; margin: 0 .035em 0 .07em; overflow: hidden; display: block; border: 1px solid rgba(29, 29, 31, .2); border-radius: .085em; background: #fff; box-shadow: inset 0 0 0 .035em rgba(255,255,255,.92), inset 0 0 0 .05em rgba(29,29,31,.1), 0 .1em .28em rgba(0,0,0,.09); transition: transform .2s var(--ease-spring), box-shadow .2s ease; }
-.brand-logo-stage::after { content: ""; position: absolute; inset: .055em; z-index: 3; border: 1px solid rgba(29,29,31,.12); border-radius: .045em; pointer-events: none; }
-.brand-logo-stage:hover, .brand-logo-stage:focus-visible { transform: translateY(-.035em); }
-.brand-boot-cursor { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; font-size: .62em; font-weight: 650; line-height: 1; letter-spacing: 0; opacity: 0; animation: brandCursorBlink .58s steps(1, end) infinite; }
-.brand-logo-slide { position: absolute; top: 73%; left: 7%; z-index: 0; width: 86%; height: 28%; display: grid; grid-template-rows: minmax(0, 1fr) .2em; opacity: 0; transform: scale(.76); transition: top .38s var(--ease-spring), height .38s var(--ease-spring), opacity .22s ease, transform .38s var(--ease-spring); }
-.brand-logo-slide.is-active { top: 20%; z-index: 2; height: 60%; opacity: 1; transform: scale(1); }
-.brand-logo-slide.is-prev { top: 1%; z-index: 1; opacity: .42; transform: scale(.86); }
-.brand-logo-slide.is-next { top: 73%; z-index: 1; opacity: .42; transform: scale(.86); }
-.brand-logo-item { width: 100%; height: 100%; min-height: 0; display: block; object-fit: contain; object-position: center; filter: saturate(.96); }
-.brand-logo-underscore { justify-self: center; align-self: end; font-size: .2em; font-weight: 700; line-height: 1; letter-spacing: 0; opacity: 0; animation: brandCursorBlink .9s steps(1, end) infinite; }
-.brand-logo-slide.is-active .brand-logo-underscore { opacity: 1; }
-.brand-hero.is-booting .brand-boot-cursor { opacity: 1; }
+.brand-wordmark { margin: 0; display: grid; grid-template-columns: auto 1.7em auto; align-items: center; justify-content: start; font-size: clamp(62px, 8.25vw, 126px); font-weight: 690; line-height: .82; letter-spacing: -.075em; white-space: nowrap; }
+.brand-logo-stage { position: relative; width: 1.62em; height: 1.05em; margin: -.18em .06em 0 .1em; overflow: hidden; display: block; color: var(--text); }
+.brand-logo-stage:hover, .brand-logo-stage:focus-visible { color: #000; }
+.brand-logo-line { position: absolute; right: 3%; bottom: .06em; left: 3%; z-index: 3; height: .055em; display: block; background: currentColor; transform-origin: center; }
+.brand-logo-slide { position: absolute; top: 0; left: 5%; z-index: 1; width: 90%; height: calc(100% - .13em); display: block; opacity: 0; transform: translateY(72%); transition: opacity .2s ease, transform .42s var(--ease-spring); }
+.brand-logo-slide.is-active { z-index: 2; opacity: 1; transform: translateY(0); }
+.brand-logo-slide.is-exiting { z-index: 1; opacity: 0; transform: translateY(-72%); }
+.brand-logo-item { width: 100%; height: 100%; min-height: 0; display: block; object-fit: contain; object-position: center bottom; filter: saturate(.96); }
 .brand-hero.is-booting .brand-logo-slide, .brand-hero.is-booting .brand-activity-bar { visibility: hidden; opacity: 0; }
+.brand-hero.is-booting .brand-logo-line { animation: brandCursorBlink .58s steps(1, end) infinite; }
+.brand-logo-stage.is-switching .brand-logo-line { animation: brandCursorBlink .18s steps(1, end) 4; }
 @keyframes brandCursorBlink { 0%, 46% { opacity: 1; } 47%, 100% { opacity: 0; } }
 .brand-activity-bar { margin-top: 20px; }
 .brand-active-project { min-width: 0; display: flex; align-items: baseline; gap: 9px; }
@@ -240,7 +237,7 @@ footer { width: 100%; padding: 21px max(var(--pad), calc((100vw - var(--content)
   .site-brand img { width: 27px; height: 27px; }.site-brand strong { font-size: 12px; }.site-brand small { display: none; }
   .site-header nav { gap: 2px; font-size: 12px; }.site-header nav a:nth-child(1), .site-header nav a:nth-child(3), .site-header nav a:nth-child(4) { display: none; }.site-header nav a { padding-inline: 11px; }.site-header .nav-cta { padding-inline: 15px; }
   .cover { min-height: auto; padding-top: calc(var(--header-h) + 52px); padding-bottom: 26px; }
-  .brand-hero { min-height: auto; justify-content: flex-start; }.brand-wordmark { width: 100%; grid-template-columns: auto auto; justify-content: start; white-space: normal; line-height: .86; }.brand-wordmark-prefix { grid-column: 1; }.brand-logo-stage { grid-column: 2; width: 1.9em; height: 1.46em; margin: -.1em 0 -.08em .08em; }.brand-wordmark-suffix { grid-column: 1 / -1; }.brand-activity-bar { margin-top: 18px; }.brand-active-project { gap: 7px; }.brand-signature { margin-top: 52px; }.brand-mission { max-width: 330px; font-size: 29px; }
+  .brand-hero { min-height: auto; justify-content: flex-start; }.brand-wordmark { width: 100%; grid-template-columns: auto 1.6em; justify-content: start; white-space: normal; line-height: .86; }.brand-wordmark-prefix { grid-column: 1; }.brand-logo-stage { grid-column: 2; width: 1.52em; height: 1.02em; margin: -.18em 0 0 .1em; }.brand-wordmark-suffix { grid-column: 1 / -1; }.brand-activity-bar { margin-top: 18px; }.brand-active-project { gap: 7px; }.brand-signature { margin-top: 52px; }.brand-mission { max-width: 330px; font-size: 29px; }
   .intro, .section-title-row, .chapter-heading, .case-intro, .split-case { grid-template-columns: 1fr; }
   .intro { margin-top: 12px; padding-top: 72px; padding-bottom: 82px; }.intro-statement h2 { margin-bottom: 56px; }.intro-essay p { font-size: 18px; }.profile-figure, .principle-list { grid-column: 1; }.profile-figure { margin-top: 50px; grid-template-columns: 1fr; }.profile-figure img { max-width: none; }.profile-figure figcaption { justify-self: stretch; flex-direction: row; justify-content: space-between; text-align: left; }.principle-list { margin-top: 60px; grid-template-columns: 1fr; }.principle-list a { min-height: 96px; }
   .map-section, .archive, .awards, .press, .chapter { padding-top: 90px; padding-bottom: 100px; }.section-title-row > p { margin-top: 34px; font-size: 17px; }

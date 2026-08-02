@@ -152,19 +152,40 @@ document.addEventListener('DOMContentLoaded', function () {
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         let activeIndex = 0;
         let autoplayTimer = null;
+        let transitionTimer = null;
         let isVisible = true;
         let isBooting = true;
 
-        function showBrandItem(index) {
-            activeIndex = (index + brandItems.length) % brandItems.length;
-            const item = brandItems[activeIndex];
-            const previousIndex = (activeIndex - 1 + brandItems.length) % brandItems.length;
-            const nextIndex = (activeIndex + 1) % brandItems.length;
-            slides.forEach(function (slide, slideIndex) {
-                slide.classList.toggle('is-active', slideIndex === activeIndex);
-                slide.classList.toggle('is-prev', slideIndex === previousIndex);
-                slide.classList.toggle('is-next', slideIndex === nextIndex);
+        function showBrandItem(index, animate) {
+            const nextIndex = (index + brandItems.length) % brandItems.length;
+            const previousSlide = slides[activeIndex];
+            const nextSlide = slides[nextIndex];
+            window.clearTimeout(transitionTimer);
+
+            slides.forEach(function (slide) {
+                if (slide !== previousSlide && slide !== nextSlide) slide.classList.remove('is-active', 'is-exiting');
             });
+
+            if (animate && previousSlide !== nextSlide) {
+                previousSlide.classList.remove('is-active');
+                previousSlide.classList.add('is-exiting');
+                nextSlide.classList.remove('is-active', 'is-exiting');
+                void nextSlide.offsetHeight;
+                nextSlide.classList.add('is-active');
+                brandLink.classList.remove('is-switching');
+                void brandLink.offsetHeight;
+                brandLink.classList.add('is-switching');
+                transitionTimer = window.setTimeout(function () {
+                    previousSlide.classList.remove('is-exiting');
+                    brandLink.classList.remove('is-switching');
+                }, 460);
+            } else {
+                slides.forEach(function (slide) { slide.classList.remove('is-active', 'is-exiting'); });
+                nextSlide.classList.add('is-active');
+            }
+
+            activeIndex = nextIndex;
+            const item = brandItems[activeIndex];
             name.textContent = item.name;
             role.textContent = item.role;
             brandLink.href = item.target;
@@ -180,14 +201,14 @@ document.addEventListener('DOMContentLoaded', function () {
             stopAutoplay();
             if (reducedMotion.matches || !isVisible || isBooting || brandHero.matches(':hover') || brandHero.contains(document.activeElement)) return;
             autoplayTimer = window.setInterval(function () {
-                showBrandItem(activeIndex + 1);
+                showBrandItem(activeIndex + 1, true);
             }, 1800);
         }
 
         brandLink.addEventListener('keydown', function (event) {
             if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
                 event.preventDefault();
-                showBrandItem(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
+                showBrandItem(activeIndex + (event.key === 'ArrowRight' ? 1 : -1), true);
                 startAutoplay();
             }
         });
@@ -202,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
             isBooting = false;
             brandHero.classList.remove('is-booting');
             brandHero.classList.add('is-ready');
-            showBrandItem(0);
+            showBrandItem(0, false);
             startAutoplay();
         }
 
@@ -216,7 +237,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             startAutoplay();
         }
-        showBrandItem(0);
         if (reducedMotion.matches) finishBoot();
         else window.setTimeout(finishBoot, 1250);
     }
