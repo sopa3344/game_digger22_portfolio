@@ -306,7 +306,10 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: 'Logitech', role: 'Brand Experience', target: '#activity-map', activityKey: 'logitech' },
             { name: 'UNITE Seoul', role: 'Interactive Exhibition', target: '#activity-map', activityKey: 'logitech' },
             { name: 'Seoul Game Town', role: 'Exhibition', target: '#activity-map', activityKey: 'town2' },
-            { name: 'MMCA Advisory', role: 'Culture', target: '#activity-map', activityKey: 'mmca' }
+            { name: 'MMCA Advisory', role: 'Culture', target: '#activity-map', activityKey: 'mmca' },
+            { name: 'PlayX4', role: 'Cat Crunch Games Exhibition', target: '#activity-map', activityKey: 'anti' },
+            { name: 'G-STAR', role: 'Cat Crunch Games Exhibition', target: '#activity-map', activityKey: 'anti' },
+            { name: 'BIC Festival', role: 'Cat Crunch Games Exhibition', target: '#activity-map', activityKey: 'anti' }
         ];
         const slides = Array.from(brandHero.querySelectorAll('[data-brand-slide]'));
         const brandLink = brandHero.querySelector('[data-brand-link]');
