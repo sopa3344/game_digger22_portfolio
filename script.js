@@ -405,16 +405,3 @@ document.addEventListener('DOMContentLoaded', function () {
         else window.setTimeout(finishBoot, 1000);
     }
 });
-
-window.addEventListener('load', function () {
-    const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (!hasFinePointer || prefersReducedMotion || !window.cursoreffects) {
-        return;
-    }
-
-    new window.cursoreffects.followingDotCursor({
-        color: ['#111111a6']
-    });
-});
